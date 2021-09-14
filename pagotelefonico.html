@@ -1,0 +1,152 @@
+<html>
+<head>
+<style>
+body{font-family:calibri}
+
+
+.fixed-header, .fixed-footer{
+        width: 100%;
+        position: fixed;        
+        background: #fff;
+        padding: 5px 0;
+        color: #000;
+    }
+	body{        
+        padding-top: 60px;
+        padding-bottom: 40px;
+		font-family:calibri;
+    }
+    .container{
+        width: 95%;
+        margin: 0 auto; /* Center the DIV horizontally */
+		margin-top: 20px;
+    }
+	.fixed-header{
+        top: 0;
+    }
+    .fixed-footer{
+        bottom: 0;
+    }    
+	
+a.button:link, a.button:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a.button:hover, a.button:active {
+  background-color: red;
+}
+
+p.speech{background-color:#c0d6fa;}
+b.titspeech{background-color: #245cb5;color:white;font-size:20px;}
+
+</style>
+<script>
+function vs(URL){ 
+   window.open(URL,"Info","width='80%',height=500,scrollbars=NO") 
+} 
+function mostrar(nom){
+	document.getElementById('pagotel').style.display="none";
+	document.getElementById('pagoteldat').style.display="none";
+	document.getElementById(nom).style.display="block";
+	
+
+}
+</script>
+</head>
+<body style="margin-left: 0px;">
+
+<div class="fixed-header">
+        <div class="">
+			<div style="position:relative;float:left;height:65px;background-color:#032c6e;color:white;"><h1 style="margin:13px;">PAGO TELEFONICO</h1></div>
+			<div style="position:relative;float:left;height:65px;"><a href="javascript:mostrar('pagotel')"><img src="IMG/pagotc.png" style="width:350px;"/></a></div>
+           	<div style="position:relative;float:left;height:65px;"><a href="javascript:mostrar('pagoteldat')"><img src="IMG/pagotcdat.png" style="width:350px;"/></a></div>
+        </div>
+</div>
+<div class="container">
+
+<!-- Solo Pago Telefonico-->
+<div id="pagotel" style="display:none">
+<h2>¿Que tarjeta posee?</h2>
+<!-- pago por IVR-->
+<blockquote><strong style="background-color: #032c6e;color: white;padding: 10px;">A )VISA / AMERICAN EXPRESS / MASTERCARD [PAGO ONLINE]</strong>
+<blockquote>
+<p class="speech"><b class="titspeech">&nbsp;Speech&nbsp;</b>&nbsp;&nbsp; A partir de ahora los pagos telefónicos con AMEX / VISA / MASTERCARD solo se pueden hacer marcando la opción 1 y luego nuevamente 1 , desde ahí podrá elegir pagar con tarjeta de crédito;  o bien podrá dirigirse a la Sucursal Virtual donde podrá ver el estado de su cuenta ,seleccionar la factura pendiente de pago y pagarla desde ahí. Si desea lo puedo trasferir ahora mismo.</p>
+<ul>
+
+<li><b>Cliente Acepta :</b>&nbsp;Derivar a <a href="javascript:vs('')">IVR</a></li>
+<li><b>Cliente Con inconvenientes en pago IVR:</b>&nbsp;Indagar sobre él inconveniente, brindar soporte para que pueda hacerlo y/o inducir al pago en SV. En caso de que no posea usuario de SV se deberá guiar para su creación. Ver manual <a href="javascript:vs('')">Creación Usuario SV</a></li>
+<li><b>Cliente con objecion</b>: "No puedo / No se / No quiero"<br>
+	<p class="speech"><b class="titspeech">&nbsp;Speech&nbsp;</b>&nbsp;&nbsp; Por esta vez de forma excepcional voy a pedir autorización para procesar su solicitud, pero recuerde lo que le informé porque su próxima solicitud deberá realizarla por el medio indicado</p>
+	<h3>Proceder segun Paso B</h3>
+
+</li>
+</ul>
+
+</blockquote>
+</blockquote>
+
+
+<!-- pago por CRM-->
+<blockquote><strong style="background-color: #032c6e;color: white;padding: 10px;">B) OTRAS TARJETAS [PAGO OFFLINE]</strong>
+<blockquote>
+<p>Solo seguirán tomando pagos con tarjeta de crédito offline (las tarjetas offline son todas menos Amex, Visa y Mastercard que son Online) , estos pagos tardan 48 o 72hs hábiles en ingresar, quedando en estado pendiente hasta su aprobación.</p>
+<b>Procesar el pago en CRM ingresando en el menú: [CTA CTE >> ADMINISTRACION DE PAGOS >> PAGO TELEFONICO]</b>
+<p><b>IMPORTANTE:</b> Cuando ingresamos en la pantalla de "ingreso de pago" y una vez cargado el cliente se deberá validar con el cliente los siguientes datos acompañado del speech: </p>
+<blockquote><p class="speech"><b class="titspeech">&nbsp;Speech&nbsp;</b>&nbsp;&nbsp; "Le recordamos que el pago con tarjeta ……. Demora en ingresar 48 o 72hs hábiles. El pago será tomado bajo el número de cliente..........a nombre de ......................por un importe total de $............"</em></blockquote>
+<p>Luego de esta validación dar continuar con la gestión tomando el pago telefónico y continuar con la carga de su correspondiente.</p>
+<a class="button" href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_fact_pol_tomarpago.html')" >Ver Manual Pago en CRM</a>
+</blockquote>
+</blockquote>
+
+
+</div>
+<!-- Pago Telefonico con DAT-->
+<div id="pagoteldat" style="display:none">
+<h2>¿Que tarjeta posee?</h2>
+<!-- pago por IVR-->
+<blockquote><strong style="background-color: #032c6e;color: white;padding: 10px;">A )VISA / AMERICAN EXPRESS / MASTERCARD [PAGO ONLINE]</strong>
+<blockquote>
+<p class="speech"><b class="titspeech">&nbsp;Speech&nbsp;</b>&nbsp;&nbsp; A partir de ahora los pagos telefónicos con AMEX / VISA / MASTERCARD  + DAT solo se pueden realizar mediante el sistema automatico, donde podrá elegir pagar con tarjeta de crédito y luego le dará la opción de adherirse al Débito Automatico con la misma Tarjeta.Aguarde que lo transfiero directamente</p>
+<ul>
+
+<li><b>Cliente Acepta :</b>&nbsp;Derivar a <a href="javascript:vs('')">IVR</a></li>
+<li><b>Cliente Con inconvenientes en pago IVR:</b>&nbsp;Indagar sobre él inconveniente, brindar soporte para que pueda hacerlo y/o inducir al pago en SV. En caso de que no posea usuario de SV se deberá guiar para su creación. Ver manual <a href="javascript:vs('')">Creación Usuario SV</a></li>
+<li><b>Cliente con objecion</b>: "No puedo / No se / No quiero"<br>
+	<p class="speech"><b class="titspeech">&nbsp;Speech&nbsp;</b>&nbsp;&nbsp; Por esta vez de forma excepcional voy a pedir autorización para procesar su solicitud, pero recuerde lo que le informé porque su próxima solicitud deberá realizarla por el medio indicado</p>
+	<h3>Proceder segun Paso B</h3>
+
+</li>
+</ul>
+
+</blockquote>
+</blockquote>
+
+
+<!-- pago por CRM-->
+<blockquote><strong style="background-color: #032c6e;color: white;padding: 10px;">B) OTRAS TARJETAS [PAGO OFFLINE]</strong>
+<blockquote>
+<p>Solo seguirán tomando pagos con tarjeta de crédito offline (las tarjetas offline son todas menos Amex, Visa y Mastercard que son Online) , estos pagos tardan 48 o 72hs hábiles en ingresar, quedando en estado pendiente hasta su aprobación.</p>
+<b>Procesar el pago en CRM ingresando en el menú: [CTA CTE >> ADMINISTRACION DE PAGOS >> PAGO TELEFONICO]</b>
+<p><b>IMPORTANTE:</b> Cuando ingresamos en la pantalla de "ingreso de pago" y una vez cargado el cliente se deberá validar con el cliente los siguientes datos acompañado del speech: </p>
+<blockquote><p class="speech"><b class="titspeech">&nbsp;Speech&nbsp;</b>&nbsp;&nbsp; "Le recordamos que el pago con tarjeta ……. Demora en ingresar 48 o 72hs hábiles. El pago será tomado bajo el número de cliente..........a nombre de ......................por un importe total de $............"</em></blockquote>
+<p>Luego de esta validación dar continuar con la gestión tomando el pago telefónico + adhesion al DAT segun el siguiente instructivo.</p>
+<a class="button" href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_fact_pol_tomarpago.html')" >Ver Manual Pago + Adhesion a DAT en CRM</a>
+</blockquote>
+</blockquote>
+
+
+</div>
+
+</div>
+
+
+
+</div>
+
+</body>
+</html>
