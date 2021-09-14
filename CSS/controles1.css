@@ -1,0 +1,75 @@
+.ntabla {
+  border-collapse: collapse; /* Collapse borders */
+  width: 100%; /* Full-width */
+  border: 1px solid #ddd; /* Add a grey border */
+  font-size: 10px; /* Increase font-size */
+}
+
+.ntabla th, .ntabla td {
+  text-align: left; /* Left-align text */
+  padding: 8px; /* Add padding */
+}
+
+.ntabla tr {
+  /* Add a bottom border to all table rows */
+  border-bottom: 1px solid #ddd; 
+}
+
+.ntabla tr.header, .ntabla tr:hover {
+  /* Add a grey background color to the table header and on hover */
+  background-color: #f1f1f1;
+}
+
+
+/********************MENU VERTICAL************************/
+
+* {box-sizing: border-box}
+
+/* Style the tab */
+.tab {
+  float: left;
+  background-color: #f1f1f1;
+  width: 18%;
+
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  display: block;
+  background-color: inherit;
+ /*color: black;*/
+  padding: 10px 5px;
+  width: 100%;
+  border-bottom:1px solid #d8dde0;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 12px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+/* .tabcontent { */
+  /* float: left; */
+  /* padding: 0px 12px; */
+  /* border: 1px solid #ccc; */
+  /* width: 80%; */
+  /* margin-top: 0px; */
+/* } */
+/* Style each tab content individually */ 
+
+.tabcontent{border-width:2px;}
+.BAR_TIT{width:102.5%;height:25px;margin-left:-1.1%;background-color:#007acc;}
+.btit{color:#fff;font-size:bold;font-size:15px;}
+.tablinks{font-weight:bold;background-color:#f1f1f1}
+

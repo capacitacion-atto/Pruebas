@@ -1,0 +1,58 @@
+
+.boton{
+ 
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.botonc{
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 1px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.rojo{background-color: white;color: black;border: 2px solid red;}
+.rojo:hover {background-color: red;color: white;}
+  
+.auh {background-color: white;color: black;border: 2px solid green;}
+.auh:hover {background-color: green;color: white;}
+
+.suaf {background-color: white;color: black;border: 2px solid #809fff;}
+.suaf:hover {background-color: #809fff;color: white;}
+
+.pnc {background-color: white;color: black;border: 2px solid #6666ff;}
+.pnc:hover {background-color: #6666ff;color: white;}
+
+.pnc1 {background-color: white;color: black;border: 2px solid #4747d1;}
+.pnc1:hover {background-color: #4747d1;color: white;}
+
+.pnc2 {background-color: white;color: black;border: 2px solid #3366ff;}
+.pnc2:hover {background-color: #3366ff;color: white;}
+
+.sipa {background-color: white;color: black;border: 2px solid #b38600;}
+.sipa:hover {background-color: #b38600;color: white;}
+
+.desem {background-color: white;color: black;border: 2px solid #ff5c33;}
+.desem:hover {background-color: #ff5c33;color: white;}
+
+.hogar {background-color: white;color: black;border: 2px solid #669999;}
+.hogar:hover {background-color: #669999;color: white;}
+
+.prog {background-color: white;color: black;border: 2px solid #b3003b;}
+.prog:hover {background-color: #b3003b;color: white;}
+
+.mdds {background-color: white;color: black;border: 2px solid #004d4d;}
+.mdds:hover {background-color: #004d4d;color: white;}

@@ -1,0 +1,6 @@
+fieldset {border: 2px solid #1F497D;background: #fff;border-radius: 5px;padding: 3px;}
+fieldset legend {background: #1F497D;color: #fff;padding: 0px 6px ;font-size: 25px;max-width:97%;border-radius: 5px;/*box-shadow: 0 0 0 5px #ddd;*/;margin-left: 20px;text-transform:uppercase;}
+.sub{background: #69727d;color: #fff;padding: 0px 6px ;font-size: 18px;max-width:97%;border-radius: 5px;/*box-shadow: 0 0 0 5px #ddd;*/;margin-left: 20px;text-transform:Uppercase;}
+.sub2{background: #69727d;color: #fff;padding: 0px 6px ;font-size: 14px;max-width:97%;border-radius: 5px;/*box-shadow: 0 0 0 5px #ddd;*/;margin-left: -3px;text-transform:Uppercase;}
+.tfield-titulo{background: #007acc;width: 96%;height:25px;color: #fff;padding: 0px 6px ;font-size: 18px;max-width:97%;border-radius: 5px;/*box-shadow: 0 0 0 5px #ddd;*/;margin-left: 0px;text-transform:Uppercase;}
+.tfield{margin-left:-9px;margin-top: 4px;}

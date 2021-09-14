@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+  <head>
+   <title>BUSCADOR SU/RA</title>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta charset="UTF-8">
+   <script src="js/jquery.min.js"></script>
+   <script src="js/jquery-ui.min.js"></script>
+   <link rel="stylesheet" href="css/jquery-ui.css">
+   <script type="text/javascript" src="data/baccesos.json"></script>
+   <link rel="stylesheet" href="css/w3.css">
+   <link rel="stylesheet" href="css/all.css">
+   <link href="css/scrollBar.css" rel="stylesheet" type="text/css" />
+   <link rel="stylesheet" href="css/skin.css">
+   <meta http-equiv="Expires" content="0">
+   <meta http-equiv="Last-Modified" content="0">
+   <Meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+   <meta http-equiv="expires" content="0">
+   <meta http-equiv="Pragma" content="no-cache">
+   <script>	
+
+     $(document).ready(function(){
+	 //navegador
+	if (navigator.userAgent.match(/msie/i) || navigator.userAgent.match(/trident/i) ){
+    $("#principal").hide();openm('f340','f528','noanda');$('#noanda').on('dialogopen', function(event){$(this).parent().children().children('.ui-dialog-titlebar-close').hide();})
+	}
+	
+	 <!-- $("#user").load("http://atentoweb/ansesflows/default.aspx #usuario",function(){ -->
+	 <!-- var xs = document.getElementById("LoginName1").innerHTML;var sx=xs.length -->
+	 <!-- var usu=xs.slice(23,sx) -->
+	 <!-- usu=usu.toUpperCase(); -->
+	 <!-- document.getElementById("nt").innerHTML=usu;}) -->
+          
+     $(".BOP").hide();
+     
+	 
+	 
+	 });
+     //Deshabilita retorno del navegador By yo RCC Muajaja//
+  <!--    $(document).ready(function() { -->
+     //var path = 'index3.html';//
+      //history.pushState(null, null, path + window.location.search);//
+     // window.addEventListener('popstate', function (event) {//
+     //   history.pushState(null, null, path + window.location.search);//
+     // });//
+    // });//
+     
+     	 
+	 function openm(h,w,fr,pt,fc){
+	 var Y = window.pageYOffset;
+	 var th=h.slice(0,1);var nh=h.slice(1,4);var dHeight;var dWidth
+	 var tw=w.slice(0,1);var nw=w.slice(1,4)
+	 if(th=="f"){dHeight=nh}else{var wHeight = $(window).height();dHeight = wHeight * nh;}
+	 if(tw=="f"){dWidth=nw}else{var wWidth = $(window).width();dWidth = wWidth * nw;}
+	 if(pt==""){$("#"+fr+"").dialog({resizable: false,height: dHeight,width: dWidth,modal: true, draggable: false, close: function(e){eval(fc)}})}
+	 else{$("#"+fr+"").dialog({resizable: false,height: dHeight,width: dWidth,modal: true, draggable: false, open: function(event, ui) {$(this).parent().css({'top': Y+60});}});}}
+	 
+	 function copiar(id_elemento){
+	    
+        var copyText = document.getElementById("temp");             
+        copyText.select();
+        document.execCommand('Copy');
+       window.close();      
+    } 
+	function copiar2(id_elemento){
+	    
+        var copyText = document.getElementById("temp2");             
+        copyText.select();
+        document.execCommand('Copy');
+    
+    } 
+	function copiar3(id_elemento){
+	    
+        var copyText = document.getElementById("temp3");             
+        copyText.select();
+        document.execCommand('Copy');
+    
+    } 
+
+   </script>
+   <style>
+     .proc {display:none}
+     #tit{display: inline-block;overflow:scroll;background-Color:#fff;}
+     .buscador {background-image: url('img/ICONS/searchicon.png');background-position: 10px 12px;background-repeat: no-repeat;width: 100%;font-size: 16px;padding: 12px 20px 12px 40px;border: 1px solid #ddd;margin-bottom: 12px;}
+     .modal-footer {padding: 2px 16px;background-color: #5cb85c;color: white;}
+
+     @font-face {
+     font-family: 'Raleway';
+     src: url("css/fonts/Raleway-Regular.eot");
+     src: url("css/fonts/Raleway-Regular.eot?#iefix") format('embedded-opentype'),
+     url("css/fonts/Raleway-Regular.woff") format('woff'),
+     url("css/fonts/Raleway-Regular.ttf") format('truetype');
+     font-weight: 400;
+     font-style: normal;
+	 Content-Type: text/html; charset=UTF-8
+     }
+	 body {font-family: 'Raleway';font-size: 15px;}
+     tbody {font-family: 'Raleway';font-size: 0.6em;}
+	#menutop li{font-family: 'Raleway';}
+	#pata{font-size: 0.7em;}
+	#timer{background-position: 10px 12px;background-repeat: no-repeat;width: 150px;font-size: 20px;padding: 12px 20px 12px 40px; border: 1px solid #ddd;height: 40px;}
+     .cred{height:300px;border-radius:5px;border-color: #3c8dbc;}
+     .cred1{border-radius:5px;border-color: #3c8dbc;margin-top:2px;height:130px;}
+     .cred2{border-radius:5px;border-color: #3c8dbc;margin-top:2px;height:160px;}
+		 .cb{background-Color:#3c8dbc;}
+		 .th1{width:5%;} 
+		 .th2{width:10%;}
+		 .th3{width:70%;}
+		 .dtf{height: 39px;margin-top: -19px;}
+		 .dropb { padding: 5px 10px;text-align: center;text-decoration: none;display: inline-block;font-size: 10px;margin: 1px 2px;cursor: pointer;border-radius: 5px;}
+		 .dr {position: relative;display: inline-block;}
+		 .dr-cont {display: none;position: absolute;background-color: #f9f9f9;min-width: 400px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);z-index: 1;}
+		.dr-cont a {color: black; padding: 8px 8px;text-decoration: none;display: block;font-size:0.8em;}
+		.dr-cont a:hover {background-color: #669999;color:white;}
+		.dr:hover .dr-cont {display: block;}
+		.dr:hover .dropb { background-color: #669999;}
+  .botonc{border: none;color: white;padding: 5px 10px;text-align: center;text-decoration: none;display: inline-block;font-size: 10px;margin: 1px 2px;cursor: pointer;border-radius: 5px;}
+  .ase{color: black;border: 2px solid #5f7575;}
+  .ase:hover {background-color: #5f7575;color: white;}
+  .tur {color: black;border: 2px solid #669999;}
+  .tur:hover {background-color: #669999;color: white;}
+  .rojo{background-color: white;color: black;border: 2px solid red;}
+  .rojo:hover {background-color: red;color: white;}
+  .azul {background-color: white;color: black;border: 2px solid #809fff;}
+  .azul:hover {background-color: #809fff;color: white;}	
+  .ipcon{display:none;}
+  .tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 80%;
+  margin-top: 0px;
+}
+.rfxa{background-color: #a0a0a0;color: #000;border-radius: 0px;border: 1px solid;margin-top: 0px;list-style-type: none;margin: 3px;margin-left: -4px;padding: 3px;width: 5%;float: left;}
+	.rfxb{background-color: #c5c5c5;color: #2f2f2f;border-radius: 1px;border: 1px solid;margin-top: 0px;list-style-type: none;margin: 3px;margin-left: -4px;padding: 3px;width: 85%;float: left;}
+	.rfxe{background-color: #2a8414;color: #fff;border-radius: 1px;border: 1px solid black;margin-top: 0px;list-style-type: none;margin: 3px;margin-left: -4px;padding: 3px;width: 10%;float: left;}
+	.rfxen{background-color: #a0171d;color: #fff;border-radius: 1px;border: 1px solid black;margin-top: 0px;list-style-type: none;margin: 3px;margin-left: -4px;padding: 3px;width: 10%;float: left;}
+	.rfxd{background-color: #e4e4e4;color: #000;border-radius: 0px;border: 1px solid black;margin-top: 0px;list-style-type: none;margin: 3px;margin-left: -4px;padding: 3px;float: left;width: 88%;font-size:11px;margin-top: -3px;}
+	.rfxc{background-color: #232523;color: #fff;border-radius: 0px;border: 1px solid black;margin-top: 0px;list-style-type: none;margin: 3px;margin-left: -4px;padding: 1px;float: left;width: 12%;font-size:14px;margin-top: -3px;font-family:calibri;}
+	.p0{margin: 2% 0% 4% 1%;}
+	.p1{background-color: #232523;color: #fff;border-radius: 0px;border: 1px solid black;margin-top: 0px;list-style-type: none;margin: 3px;margin-left: -4px;padding: 3px;float: left;width: 10%;font-size:11px;margin-top: -3px;}
+	.p2{background-color: #232523;color: #fff;border-radius: 0px;border: 1px solid black;margin-top: 0px;list-style-type: none;margin: 3px;margin-left: -4px;padding: 3px;float: left;width: 90%;font-size:11px;margin-top: -3px;}
+	.rfxdd{background-color: #e4e4e4;color: #000;border-radius: 0px;border: 1px solid black;margin-top: 0px;list-style-type: none;margin: 3px;margin-left: -4px;padding: 3px;float: left;width: 66%;font-size:11px;margin-top: -3px;}
+	.rfxcc{background-color: #232523;color: #fff;border-radius: 0px;border: 1px solid black;margin-top: 0px;list-style-type: none;margin: 3px;margin-left: -4px;padding: 1px;float: left;width: 17%;font-size:14px;margin-top: -3px;font-family:calibri;}
+	.tnv{font-weight: bold;margin:0% 0% 1% 1%;font-size: 1.2em;}
+	.cnv{font-size: 0.8em;margin-left: 2%;}
+		 .npri{background-color:#e1edf357;border-radius: 8px;border: 1px solid;margin-top:0px;list-style-type:none;margin: 2px;    margin-left: 0px;}
+		 .ntabla a{display: block;}
+		 .ntabla tr:hover{background-color:#000;color:#fff;}
+		 .tlink{cursor: pointer;}
+		 #ult{background:red;font-weight:bold;color:white;}
+		 .txta{padding: 12px;border: 1px solid #ccc;resize: vertical;text-transform: uppercase;color: darkblue;height: 46px;}
+.sela{padding: 12px;bo	rder: 1px solid #ccc;border-radius: 4px;resize: vertical;color: darkblue;}
+.altr{color:red;font-weight:bold;}
+
+
+</style>
+
+  </head>
+  <body style="overflow:hidden;">
+  
+   <div id="principal" class="w3-container">
+<div id="BUSCADORSD" style="margin-top:5px">
+        <div><input id="txtb"type="text" onkeypress="filtrot()"placeholder="INGRESAR Y PRESIONAR [ENTER]" style="background-position: 10px 12px; width: 80%;font-size: 16px;font-weight:bold;padding: 10px;border: 1px solid #ddd;border: 1px solid #005396;text-transform:uppercase" />
+		<button id="xbr2" class="w3-button w3-red bt"style="background-color: #da3636;width:20%;display:block; height: 40px;position: relative;float: right;" onclick="resetsearch()	" >LIMPIAR</button>
+		</div>
+        <fieldset  style="height:90vh;overflow:auto;margin-top:2px;">
+	
+         <table id="TSD" class="w3-table-all" style="width:100%;">		
+		 	 <thead><th style='width:5%'>TIPO</th><th style='width:35%'>CLASIFICION</th><th style='width:60%'>SUBCLASIFICION</th></thead>
+			<tbody class="list">
+			</tbody>
+			
+		 </table>
+		</fieldset>
+  
+   </div>
+
+
+   <script>
+ 
+   function resetsearch(){
+	$("#txtb").prop("disabled",false);$("#txtb").val("");$("#txtb").focus();$(".list").empty();
+	
+	}
+   function filtrot(){
+     var newRowContent;var bb="";var bo;var fg=0;var fg2=0;var fg3=0;var fg4=0;var fg5=0
+	var keycode = (event.keyCode ? event.keyCode : event.which);
+	if(keycode == '13'){
+		bb=$("#txtb").val()
+		 var uf=LISTASD.filter(function (el){
+		bo=el.ACC;bb=bb.toLowerCase();bo=bo.toLowerCase();
+		if(bo.indexOf(bb)!=-1){return el.ID}})
+		 $(".list").empty()
+		 if (uf.length>0){
+		 for (var i = 0; i < uf.length; i++) {
+		   newRowContent += "<tr><td>"+uf[i]["CAT"]+"</td><td>"+uf[i]["GES"]+"</td><td>"+uf[i]["ACC"]+"</td></tr>"
+		  }
+		  $(".list").append(newRowContent);	
+		  }
+		  else{
+		  newRowContent = "<tr><td colspan='5' style='width:100%;align:center'><B STYLE='color:red'>***LA BUSQUEDA NO TIENE RESULTADOS - POR FAVOR REDEFINIA LA BUSQUEDA***</B></td></tr>"
+		  $(newRowContent).appendTo($(".list"));
+		  }
+		  uf=[];newRowContent="";
+		  $("#xbr2").show();$("#txtb").prop("disabled",true);$("#xbr2").prop("disabled",false)
+		
+}
+if(keycode == '127'){
+$("#txtb").val("")
+		  }}
+   </script>
+  </div>
+  
+   <!--******************************** div procesos**********************************************************************-->
+ 
+  
+  
+
+
+   
+  </body>
+</html>

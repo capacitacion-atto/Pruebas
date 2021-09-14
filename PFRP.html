@@ -1,0 +1,1270 @@
+<html>
+<head>
+<style>
+
+.myInput {
+  background-image: url('imgs/search.png'); /* Add a search icon to input */
+  background-position: 7px 7px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width:99%;
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+}
+.mySelect {
+  background-image: url('imgs/filter.png'); /* Add a search icon to input */
+  background-position: 7px 7px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width:99%;
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+}
+
+#myTable {
+  border-collapse: collapse; /* Collapse borders */
+  width: 100%; /* Full-width */
+  border: 1px solid #ddd; /* Add a grey border */
+  font-size: 12px; /* Increase font-size */
+  font-family:calibri;
+}
+
+#myTable th, #myTable td {
+  text-align: left; /* Left-align text */
+  padding: 8px; /* Add padding */
+}
+
+#myTable tr {
+  /* Add a bottom border to all table rows */
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  /* Add a grey background color to the table header and on hover */
+  background-color: #f1f1f1;
+}
+
+.fixed-header, .fixed-footer{
+        width: 100%;
+        position: fixed;        
+        background: #333;
+        padding: 5px 0;
+        color: #fff;
+    }
+	body{        
+        padding-top: 60px;
+        padding-bottom: 40px;
+		font-family:calibri;
+    }
+    .container{
+        width: 95%;
+        margin: 0 auto; /* Center the DIV horizontally */
+    }
+	.fixed-header{
+        top: 0;
+    }
+    .fixed-footer{
+        bottom: 0;
+    }   
+</style>
+<script>
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue,nc;
+  input = document.getElementById("txtbus");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  nc=document.getElementById('tbus').value;
+  
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[nc];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+</head>
+<body style="margin-left: 0px;">
+<div class="fixed-header">
+<div style="position:relative;float:left;width:20%;padding: 5px 0px 5px 5px;"><select id="tbus" class="mySelect" style=""><option value="3">LOCALIDAD</option><option value="2">DIRECCION</option><option value="1">NOMBRE LOCAL</option></select></div>
+<div style="position:relative;float:right;width:79%;padding: 5px 5px 5px 0px;"><input type="text" id="txtbus"  class="myInput" style="" onkeyup="myFunction()" placeholder="BUSCAR"></div></div>
+</div>
+
+<div class="container">
+<table id="myTable">
+ <tr class="header"><th>ENTIDAD</th><th>NOMBRE LOCAL</th><th>DIRECCION</th><th>LOCALIDAD</th><th>PROVINCIA</th></tr></thead><tbody>
+ <tr><td>PF</td><td>C.S. CHANGO MAS ALMIRANTE BROWN</td><td>AV. ESPORA 2074</td><td>ADROGUE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. SHOPPING BOULEVARD</td><td>AV. H. YRIGOYEN 13298</td><td>ADROGUE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR ADROGUE</td><td>H. YRIGOYEN 13500</td><td>ADROGUE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. ADROGUE</td><td>INTENDENTE GONZALEZ 1002</td><td>ADROGUE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR AVELLANEDA</td><td>AV. H. YRIGOYEN 299</td><td>AVELLANEDA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. AVELLANEDA II</td><td>SARMIENTO 46</td><td>AVELLANEDA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. BANFIELD</td><td>ALSINA 695</td><td>BANFIELD</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR BANFIELD</td><td>LAS HERAS 1163</td><td>BANFIELD</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. BECCAR</td><td>JUAN B.JUSTO 42</td><td>BECCAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR BERNAL</td><td>AV. DARDO ROCHA 849</td><td>BERNAL ESTE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR SOLEIL</td><td>BERNARDO DE IRIGOYEN 2647</td><td>BOULOGNE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR CAMPANA II</td><td>COLECTORA NORTE 1647</td><td>CAMPANA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CASEROS</td><td>3 DE FEBRERO 2872</td><td>CASEROS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CIUDADELA II</td><td>AV. RIVADAVIA 12666</td><td>CIUDADELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR DON TORCUATO</td><td>AV. MARCELO T. DE ALVEAR 1960</td><td>DON TORCUATO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. DON TORCUATO</td><td>PARAGUAY 444</td><td>DON TORCUATO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR FLORENCIO VARELA</td><td>AV. SAN MARTIN 554</td><td>FLORENCIO VARELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR PACHECO</td><td>AV. BOULOGNE SUR MER 301</td><td>GENERAL PACHECO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. GENERAL RODRIGUEZ II</td><td>AVENIDA ESPA#A 143</td><td>GENERAL RODRIGUEZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR GENERAL RODRIGUEZ</td><td>BERNARDO DE IRIGOYEN 1500</td><td>GENERAL RODRIGUEZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. GENERAL RODRIGUEZ</td><td>SAN MARTIN 238</td><td>GENERAL RODRIGUEZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR GLEW</td><td>AV. H. YRIGOYEN 20260</td><td>GLEW</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. LAFERRERE</td><td>OLEGARIO ANDRADE 6058</td><td>GREGORIO DE LAFERRERE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. WAL MART LAFERRERE</td><td>RUTA 21 Y CARLOS CASARES</td><td>GREGORIO DE LAFERRERE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. PINEYRO</td><td>AV. GALICIA 749</td><td>GUERNICA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. HAEDO</td><td>DR. LUIS GUEMES 369</td><td>HAEDO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR MASCHWITZ</td><td>SANTIAGO DEL ESTERO 690</td><td>INGENIERO MASCHWITZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR ITUZAINGO</td><td>AV. INT. C. RATTI 1860</td><td>ITUZAINGO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR ITUZAINGO II</td><td>BLAS PARERA 650</td><td>ITUZAINGO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. JOSE C. PAZ</td><td>JOSE C PAZ 1889</td><td>JOSE CLEMENTE PAZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. JOSE LEON SUAREZ</td><td>AV. MARQUEZ 2449</td><td>JOSE LEON SUAREZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR MARQUEZ</td><td>BRIG. JUAN MANUEL DE ROSAS 1261</td><td>JOSE LEON SUAREZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. LA PLATA II</td><td>CALLE 49 689</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. LA PLATA</td><td>CALLE 56 836</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR LA PLATA</td><td>CAMINO GRAL. BELGRANO  Y CALLE 517</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. WAL MART LA PLATA</td><td>CNO. CENTENARIO 1879</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. LANUS II</td><td>AV.HIPOLITO YRIGOYEN 4314</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. WAL MART LANUS</td><td>BOULEVARD DE LOS ITALIANOS 321</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. LANUS ESTE</td><td>ONCATIVIO 1957</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. LOMAS DE ZAMORA II</td><td>HIPOLITO YRIGOYEN 8945</td><td>LOMAS DE ZAMORA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR LOMAS DE ZAMORA</td><td>OLIDEN 450</td><td>LOMAS DE ZAMORA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. WAL MART MALVINAS ARGENTINAS</td><td>YATASTO Y RUTA 197 LOC 3</td><td>LOS POLVORINES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR MONTE GRANDE</td><td>CAMINO DE CINTURA 2200</td><td>LUIS GUILLON</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR LUJAN</td><td>AV. PELLEGRINI 1050</td><td>LUJAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. WAL MART LUJAN</td><td>NUESTRA SENORA DE LUJAN Y RUTA 7</td><td>LUJAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. LUJAN</td><td>SAN MARTIN 715</td><td>LUJAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR MAR DEL PLATA</td><td>AV. CONSTITUCION 7570</td><td>MAR DEL PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. MAR DEL PLATA III</td><td>SAN MARTIN 3160</td><td>MAR DEL PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. MAR DEL PLATA II</td><td>SANTA FE 1726</td><td>MAR DEL PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR MARTIN CORONADO</td><td>AV. PTE PERON 7055</td><td>MARTIN CORONADO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. MARTINEZ</td><td>ALBARELLOS 1921</td><td>MARTINEZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR SANTA FE Y EDISON</td><td>AV. SANTA FE 2349</td><td>MARTINEZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. ASISTIDO MARTINEZ</td><td>SAENZ VALIENTE 206</td><td>MARTINEZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. MONTE GRANDE</td><td>ARANA 135</td><td>MONTE GRANDE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR MORENO</td><td>ALEJANDRO GRAHAM BELL 2350</td><td>MORENO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CHANGO MAS MORENO</td><td>AV. ROCA Y SANTOS DUMONT LOC 4</td><td>MORENO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. MORENO</td><td>BME MITRE 2425</td><td>MORENO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CHANGO MAS MORON</td><td>AV. DON BOSCO 5635</td><td>MORON</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. MORON II</td><td>AV. RIVADAVIA 18437</td><td>MORON</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR MORON (VILLA TESEI)</td><td>AV. VERGARA 1910</td><td>MORON</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. MUNRO</td><td>MITRE 2525</td><td>MUNRO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR OLIVOS</td><td>UGARTE 1980</td><td>OLIVOS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CHANGO MAS 3 DE FEBRERO</td><td>AV. PTE. PERON Y CORRIENTES</td><td>PABLO PODESTA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. PILAR II</td><td>11 DE SEPTIEMBRE 632</td><td>PILAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR PILAR</td><td>AV. JOSE E. URIBURU 943</td><td>PILAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. PILAR</td><td>AV.TOMAS MARQUEZ 1238</td><td>PILAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR PILAR (MARKET)</td><td>SARRATEA 43</td><td>PILAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. QUILMES III</td><td>ALSINA 66</td><td>QUILMES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR QUILMES</td><td>AV. LA PLATA 1400</td><td>QUILMES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. QUILMES II</td><td>GARIBALDI 164</td><td>QUILMES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. WAL MART QUILMES</td><td>CALCHAQUI 700</td><td>QUILMES OESTE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. RAMOS MEJIA II</td><td>MARIANO MORENO 22</td><td>RAMOS MEJIA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR SAN FERNANDO (MARKET)</td><td>AV. PTE TTE GRAL  J. DOMINGO PERON 1350</td><td>SAN FERNANDO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. SAN FERNANDO</td><td>CONSTITUCION 572</td><td>SAN FERNANDO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR SAN FERNANDO</td><td>EX COMBATIENTE JUAN C. REGUERA 1150</td><td>SAN FERNANDO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. WAL MART SAN FERNANDO</td><td>RUTA 202 Y URUGUAY - CNO BANCALARI</td><td>SAN FERNANDO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. SAN ISIDRO</td><td>COSME BECCAR 274</td><td>SAN ISIDRO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. SAN JUSTO</td><td>ALMAFUERTE 3180</td><td>SAN JUSTO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR SAN JUSTO</td><td>AV. DON BOSCO 3749</td><td>SAN JUSTO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. SHOPPING SAN JUSTO</td><td>BRIGADIER GRAL.JUAN MANUEL DE ROSAS 3910</td><td>SAN JUSTO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR MALAVER</td><td>AMERICA 4006</td><td>SAN MARTIN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR SAN MARTIN</td><td>AV. SAN MARTIN 420</td><td>SAN MARTIN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. SAN MARTIN II</td><td>INTENDENTE CAMPOS 1831</td><td>SAN MARTIN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR SAN MIGUEL</td><td>AV. ARTURO ILLIA 3770</td><td>SAN MIGUEL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. SAN MIGUEL II</td><td>LEANDRO L. ALEM 1620</td><td>SAN MIGUEL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR SAN MIGUEL (BELLA VISTA)</td><td>PTE. PERON 111</td><td>SAN MIGUEL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. SAN MIGUEL</td><td>SARMIENTO 1025</td><td>SAN MIGUEL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. WAL MART SARANDI</td><td>AUTOPISTA BUENOS AIRES - LA PLATA KM.9</td><td>SARANDI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. LA TABLADA II</td><td>AV. CROVARA 788</td><td>TABLADA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. WAL MART TABLADA</td><td>CAMINO DE CINTURA Y CROVARA</td><td>TABLADA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. LA TABLADA</td><td>VELEZ SARFIELD 14</td><td>TABLADA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR TANDIL</td><td>PANAMA 351</td><td>TANDIL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR TEMPERLEY</td><td>AV. EVA PERON 2679</td><td>TEMPERLEY</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR TIGRE</td><td>ALTE. BROWN 371</td><td>TIGRE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CHANGO MAS TIGRE</td><td>RUTA 197 NRO 2621</td><td>TIGRE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR VICENTE LOPEZ II</td><td>AV. LIBERTADOR 215</td><td>VICENTE LOPEZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR VICENTE LOPEZ</td><td>AV. MAIPU 940</td><td>VICENTE LOPEZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. WILDE</td><td>LAS FLORES 415</td><td>WILDE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR ZARATE</td><td>LAVALLE 1879</td><td>ZARATE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>C.S. ALMAGRO</td><td>GASCON 425</td><td>ALMAGRO</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. ONCE</td><td>AV. RIVADAVIA 2562</td><td>BALVANERA</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. CONGRESO</td><td>AV.RIVADAVIA 1649</td><td>BALVANERA</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. BARRACAS</td><td>MONTES DE OCA 1307</td><td>BARRACAS</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. SHOPPING SOLAR DE LA ABADIA</td><td>ARCE 940</td><td>BELGRANO</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR BELGRANO</td><td>AV. MONROE 1655</td><td>BELGRANO</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. BELGRANO</td><td>LA PAMPA 2451</td><td>BELGRANO</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. BOEDO</td><td>AV. BOEDO 832</td><td>BOEDO</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR CABALLITO</td><td>AV. DONATO ALVAREZ 1351</td><td>CABALLITO</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. SHOPPING CABALLITO</td><td>AV. RIVADAVIA 5108 LOC 120</td><td>CABALLITO</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. PRIMERA JUNTA</td><td>AV. RIVADAVIA 5481</td><td>CABALLITO</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. ABASTO</td><td>AV. CORRIENTES 3311</td><td>CAPITAL FEDERAL</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR COLEGIALES</td><td>ELCANO 3380</td><td>COLEGIALES</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. FLORESTA</td><td>AV. RIVADAVIA 7688</td><td>FLORES</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. FLORES II</td><td>MEMBRILLAR 35</td><td>FLORES</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR VELEZ SARFIELD</td><td>AV. ALVAREZ JONTE 6383</td><td>LINIERS</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. LINIERS</td><td>CARHUE 69</td><td>LINIERS</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR MATADEROS</td><td>AV. GRAL PAZ 12950</td><td>MATADEROS</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. PERU</td><td>PERU 139</td><td>MONSERRAT</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. MONTE CASTRO</td><td>ALVAREZ JONTE 4884</td><td>MONTECASTRO</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. POMPEYA</td><td>AV. SAENZ 1256</td><td>NUEVA POMPEYA</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. PALERMO I</td><td>ARMENIA 2109</td><td>PALERMO</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR SALGUERO</td><td>JERONIMO SALGUERO 3212</td><td>PALERMO</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. PARQUE CHACABUCO</td><td>ASAMBLEA 914</td><td>PARQUE CHACABUCO</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. MONTEVIDEO</td><td>AV. CORDOBA 1591</td><td>RECOLETA</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR BERUTI</td><td>BERUTI 2951</td><td>RECOLETA</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. SHOPPING DOT</td><td>VEDIA 3626</td><td>SAAVEDRA</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. ASISTIDO CORRIENTES</td><td>AV. CORRIENTES 535</td><td>SAN NICOLAS</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. TRIBUNALES</td><td>PARANA 848</td><td>SAN NICOLAS</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. ASISTIDO 9 DE JULIO</td><td>RIVADAVIA 999</td><td>SAN NICOLAS</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. VILLA CRESPO</td><td>AV. CORDOBA 4357</td><td>VILLA CRESPO</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. VILLA DEL PARQUE II</td><td>MELINCUE 3213</td><td>VILLA DEL PARQUE</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. VILLA DEL PARQUE</td><td>NAZCA 2167</td><td>VILLA DEL PARQUE</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. VILLA DEVOTO</td><td>AV. BEIRO 5245</td><td>VILLA DEVOTO</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR VILLA DEVOTO</td><td>JOSE PEDRO VARELA 4750</td><td>VILLA DEVOTO</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. SHOPPING DEVOTO</td><td>JOSE PEDRO VARELA 4866</td><td>VILLA DEVOTO</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. WAL MART CONSTITUYENTES</td><td>AV. CONSTITUYENTES 6020</td><td>VILLA PUEYRREDON</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. VILLA URQUIZA</td><td>AV. TRINVIRATO 4115</td><td>VILLA URQUIZA</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR VILLA URQUIZA</td><td>FRANKLIN D. ROOSEVELT 5749</td><td>VILLA URQUIZA</td><td>CAPITAL FEDERAL</td></tr>
+ <tr><td>PF</td><td>C.S. CHANGO MAS CATAMARCA</td><td>AV. COSTA VILLAFANE Y MANUEL NAVARRO</td><td>SAN FDO DEL VALLE DE CATA</td><td>CATAMARCA</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR CATAMARCA</td><td>H. YRIGOYEN 1283</td><td>SAN FDO DEL VALLE DE CATA</td><td>CATAMARCA</td></tr>
+ <tr><td>PF</td><td>C.S. CATAMARCA</td><td>REPUBLICA 648</td><td>SAN FDO DEL VALLE DE CATA</td><td>CATAMARCA</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR CATAMARCA (RIVADAVIA)</td><td>AV. RIVADAVIA 945</td><td>SAN FERNANDO</td><td>CATAMARCA</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR POLONIA (COMODORO)</td><td>AV. POLONIA 1340</td><td>COMODORO RIVADAVIA</td><td>CHUBUT</td></tr>
+ <tr><td>PF</td><td>C.S. COMODORO RIVADAVIA</td><td>BELGRANO 995</td><td>COMODORO RIVADAVIA</td><td>CHUBUT</td></tr>
+ <tr><td>PF</td><td>C.S. WAL MART COMODORO RIVADAVIA</td><td>ENRIQUE GIROLAMO Y CHILE</td><td>COMODORO RIVADAVIA</td><td>CHUBUT</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR COMODORO RIVADAVIA</td><td>PELLEGRINI 851</td><td>COMODORO RIVADAVIA</td><td>CHUBUT</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR PUERTO MADRYN II</td><td>AV. GALES 1315</td><td>PUERTO MADRYN</td><td>CHUBUT</td></tr>
+ <tr><td>PF</td><td>C.S. PUERTO MADRYN</td><td>GOBERNADOR MAIZ 298</td><td>PUERTO MADRYN</td><td>CHUBUT</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR TRELEW III</td><td>25 DE MAYO Y CORRIENTES</td><td>TRELEW</td><td>CHUBUT</td></tr>
+ <tr><td>PF</td><td>C.S. LA ANONIMA TRELEW</td><td>BELGRANO 154</td><td>TRELEW</td><td>CHUBUT</td></tr>
+ <tr><td>PF</td><td>C.S. TRELEW</td><td>RIVADAVIA 268</td><td>TRELEW</td><td>CHUBUT</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR HIPER TRELEW</td><td>SOBERANIA NACIONAL 140</td><td>TRELEW</td><td>CHUBUT</td></tr>
+ <tr><td>PF</td><td>C.S. CORDOBA III</td><td>27 DE ABRIL 305</td><td>CORDOBA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. DINO SAN VICENTE</td><td>AGUSTIN GARZON 1252</td><td>CORDOBA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. CORDOBA IV</td><td>ALVEAR 84</td><td>CORDOBA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. MARIANO MAX II</td><td>AV. ARTURO CAPDEVILLA Y RANCAGUA</td><td>CORDOBA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. CORDOBA VII</td><td>AV. COLON 1891</td><td>CORDOBA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR CORDOBA COLON</td><td>AV. COLON 4880</td><td>CORDOBA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. WAL MART CORDOBA OESTE</td><td>AV. COLON Y DE CIRCUNVALACION</td><td>CORDOBA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. DINO RUTA 20</td><td>AV. FUERZA AEREA 1700</td><td>CORDOBA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR CORDOBA JARDIN</td><td>AV. OHIGGINS 3765</td><td>CORDOBA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR CORDOBA RECTA MARTINOLLI</td><td>AV. RECTA MARTINOLLI 7850</td><td>CORDOBA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. DINO ALTO VERDE</td><td>AV. RODRIGUEZ DEL BUSTO 4086</td><td>CORDOBA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. LIBERTAD RUTA 9</td><td>AV. SABATTINI 3250</td><td>CORDOBA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. MARIANO MAX V</td><td>AV. SANTA ANA 3500</td><td>CORDOBA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR GRANADEROS</td><td>BOULEVARD LOS GRANADEROS 2906</td><td>CORDOBA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. CORDOBA V</td><td>BUENOS AIRES 505</td><td>CORDOBA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. LIBERTAD CORDOBA NORTE</td><td>ENRIQUE BODERAU 7571</td><td>CORDOBA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. LIBERTAD LUGONES</td><td>F. L. BELTRAN Y CARDENOSA</td><td>CORDOBA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. WAL MART CORDOBA SUR</td><td>HORACIO JUAREZ 4410</td><td>CORDOBA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR CORDOBA JUAN B. JUSTO</td><td>JUAN B. JUSTO 4775</td><td>CORDOBA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. LIBERTAD J RIOS</td><td>LIBERTAD Y CNEL PRINGLES</td><td>CORDOBA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. CORDOBA VIII</td><td>MARIANO FRAGUERIO 1850</td><td>CORDOBA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. WAL MART CORDOBA ESTE</td><td>MAURICIO YADAROLA 1699</td><td>CORDOBA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. CORDOBA VI</td><td>VELEZ SARSFIELD 3467 LOCAL 3</td><td>CORDOBA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. WAL MART RIO CUARTO</td><td>AGENTE DUARTE Y RUTA 5</td><td>RIO CUARTO</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. CHANGO MAS VILLA NUEVA</td><td>AV. CARRANZA Y AV. COSTANERA</td><td>VILLA NUEVA</td><td>CORDOBA</td></tr>
+ <tr><td>PF</td><td>C.S. WAL MART CORRIENTES</td><td>AV. GREGORIO POMAR 840</td><td>CORRIENTES</td><td>CORRIENTES</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR CORRIENTES (HIPER)</td><td>AV. PEDRO FERRE Y CHACABUCO</td><td>CORRIENTES</td><td>CORRIENTES</td></tr>
+ <tr><td>PF</td><td>C.S. CORRIENTES</td><td>SANTA FE 1117 LOCAL 3</td><td>CORRIENTES</td><td>CORRIENTES</td></tr>
+ <tr><td>PF</td><td>C.S. CHANGO MAS PARANA</td><td>AV. BLAS PARERA 1152</td><td>PARANA</td><td>ENTRE RIOS</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR PARANA (YRIGOYEN)</td><td>H. YRIGOTEN 223</td><td>PARANA</td><td>ENTRE RIOS</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR PARANA (SAN JUAN)</td><td>SAN JUAN 609</td><td>PARANA</td><td>ENTRE RIOS</td></tr>
+ <tr><td>PF</td><td>C.S. JUJUY</td><td>ALVEAR 650</td><td>SAN SALVADOR DE JUJUY</td><td>JUJUY</td></tr>
+ <tr><td>PF</td><td>C.S. LA PAMPA</td><td>9 DE JULIO 44</td><td>SANTA ROSA</td><td>LA PAMPA</td></tr>
+ <tr><td>PF</td><td>C.S. LA RIOJA</td><td>ABEL BAZAN Y BUSTOS 570</td><td>LA RIOJA</td><td>LA RIOJA</td></tr>
+ <tr><td>PF</td><td>C.S. CHANGO MAS LA RIOJA</td><td>AV. ORTIZ DE OCAMPO 1127</td><td>LA RIOJA</td><td>LA RIOJA</td></tr>
+ <tr><td>PF</td><td>C.S. LIBERTAD MENDOZA</td><td>AV. J.V.GONZALEZ Y CIPOLLETTI</td><td>GODOY CRUZ</td><td>MENDOZA</td></tr>
+ <tr><td>PF</td><td>C.S. GODOY CRUZ</td><td>AV. SAN MARTIN SUR 35 LOCAL 1</td><td>GODOY CRUZ</td><td>MENDOZA</td></tr>
+ <tr><td>PF</td><td>C.S. WAL MART LAS HERAS</td><td>BOULOGNE SUR MER Y REGALADO OLGUIN</td><td>LAS HERAS</td><td>MENDOZA</td></tr>
+ <tr><td>PF</td><td>C.S. SAN MARTIN MENDOZA</td><td>LAS HERAS 43</td><td>LIBERTADOR GRAL SAN MARTI</td><td>MENDOZA</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR MENDOZA CUYO</td><td>AZCUENAGA 51</td><td>LUJAN DE CUYO</td><td>MENDOZA</td></tr>
+ <tr><td>PF</td><td>C.S. CHANGO MAS MAIPU</td><td>AV. MAZA 470</td><td>MAIPU</td><td>MENDOZA</td></tr>
+ <tr><td>PF</td><td>C.S. MAIPU</td><td>PATRICIAS ARGENTINAS 225</td><td>MAIPU</td><td>MENDOZA</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR MENDOZA GUAYMALLEN</td><td>AV. ACC.ESTE LAT SUR Y RONDEAU</td><td>MENDOZA</td><td>MENDOZA</td></tr>
+ <tr><td>PF</td><td>C.S. MENDOZA III</td><td>AV.GODOY CRUZ 202 LOC. 2</td><td>MENDOZA</td><td>MENDOZA</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR COLON</td><td>COLON 324</td><td>MENDOZA</td><td>MENDOZA</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR MENDOZA AZUL</td><td>LAS HERAS 798</td><td>MENDOZA</td><td>MENDOZA</td></tr>
+ <tr><td>PF</td><td>C.S. WAL MART MENDOZA</td><td>MOLDES 1023</td><td>MENDOZA</td><td>MENDOZA</td></tr>
+ <tr><td>PF</td><td>C.S. MENDOZA II</td><td>PEATONAL SARMIENTO 231</td><td>MENDOZA</td><td>MENDOZA</td></tr>
+ <tr><td>PF</td><td>C.S. SAN RAFAEL</td><td>CHILE 80</td><td>SAN RAFAEL</td><td>MENDOZA</td></tr>
+ <tr><td>PF</td><td>C.S. TUNUYAN</td><td>JULIO ARGENTINO ROCA 1003 LOCAL  4</td><td>TUNUYAN</td><td>MENDOZA</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR TUPUNGATO</td><td>BELGRANO 1170</td><td>TUPUNGATO</td><td>MENDOZA</td></tr>
+ <tr><td>PF</td><td>C.S. LIBERTAD POSADAS</td><td>AV. QUARANTA Y TOMAS GUIDO</td><td>POSADAS</td><td>MISIONES</td></tr>
+ <tr><td>PF</td><td>C.S. SHOPPING POSADAS</td><td>BOLIVAR 1979</td><td>POSADAS</td><td>MISIONES</td></tr>
+ <tr><td>PF</td><td>C.S. SHOPPING LAVALLE (POSADAS)</td><td>LAVALLE 3299</td><td>POSADAS</td><td>MISIONES</td></tr>
+ <tr><td>PF</td><td>C.S. LA ANONIMA CUTRAL CO</td><td>EGUINOA 1802</td><td>CUTRAL CO</td><td>NEUQUEN</td></tr>
+ <tr><td>PF</td><td>C.S. DELEGACION MUNICIPAL ALTO GODOY</td><td>1 DE MAYO 4288</td><td>NEUQUEN</td><td>NEUQUEN</td></tr>
+ <tr><td>PF</td><td>C.S. DELEGACION MUNICIPAL PROGRESO</td><td>ANTARTIDA ARGENTINA 2389</td><td>NEUQUEN</td><td>NEUQUEN</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR NEUQUEN II</td><td>ANTARTIDA ARGENTINA 3700</td><td>NEUQUEN</td><td>NEUQUEN</td></tr>
+ <tr><td>PF</td><td>C.S. ALTO NEUQUEN III</td><td>HIPOLITO YRIGOYEN 16</td><td>NEUQUEN</td><td>NEUQUEN</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR HIPER NEUQUEN</td><td>OLASCOAGA 350</td><td>NEUQUEN</td><td>NEUQUEN</td></tr>
+ <tr><td>PF</td><td>C.S. WAL MART NEUQUEN</td><td>RN 22 Y EUGENIO PERTICONE</td><td>NEUQUEN</td><td>NEUQUEN</td></tr>
+ <tr><td>PF</td><td>C.S. BAJO NEUQUEN II</td><td>SAN MARTIN 1927</td><td>NEUQUEN</td><td>NEUQUEN</td></tr>
+ <tr><td>PF</td><td>C.S. ALTO NEUQUEN II</td><td>SANTA FE 50</td><td>NEUQUEN</td><td>NEUQUEN</td></tr>
+ <tr><td>PF</td><td>C.S. LA ANONIMA PLAZA HUINCUL</td><td>ALBERDI Y COPAHUEL</td><td>PLAZA HUINCUL</td><td>NEUQUEN</td></tr>
+ <tr><td>PF</td><td>C.S. LA ANONIMA ZAPALA</td><td>9 DE JULIO E IBARROLA</td><td>ZAPALA</td><td>NEUQUEN</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR BARILOCHE</td><td>MORENO 909</td><td>BARILOCHE</td><td>RIO NEGRO</td></tr>
+ <tr><td>PF</td><td>C.S. BARILOCHE</td><td>ONELLI780</td><td>BARILOCHE</td><td>RIO NEGRO</td></tr>
+ <tr><td>PF</td><td>C.S. BARILOCHE II</td><td>SAN MARTIN 160</td><td>BARILOCHE</td><td>RIO NEGRO</td></tr>
+ <tr><td>PF</td><td>C.S. CHANGO MAS CIPOLLETTI</td><td>AV. BOLIVIA Y AV. PRIMEROS POBLADORES</td><td>CIPOLLETTI</td><td>RIO NEGRO</td></tr>
+ <tr><td>PF</td><td>C.S. CIPOLLETTI</td><td>GRAL. ROCA 560</td><td>CIPOLLETTI</td><td>RIO NEGRO</td></tr>
+ <tr><td>PF</td><td>C.S. GENERAL ROCA II</td><td>SARMIENTO 1474</td><td>GENERAL ROCA</td><td>RIO NEGRO</td></tr>
+ <tr><td>PF</td><td>C.S. GENERAL ROCA</td><td>TUCUMAN 946</td><td>GENERAL ROCA</td><td>RIO NEGRO</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR SALTA</td><td>20 DE FEBRERO 37</td><td>SALTA</td><td>SALTA</td></tr>
+ <tr><td>PF</td><td>C.S. CHANGO MAS SALTA</td><td>AV. PARAGUAY 1450</td><td>SALTA</td><td>SALTA</td></tr>
+ <tr><td>PF</td><td>C.S. ASISTIDO SALTA</td><td>ENTRE RIOS 1816</td><td>SALTA</td><td>SALTA</td></tr>
+ <tr><td>PF</td><td>C.S. SALTA</td><td>LEGUIZAMON 949</td><td>SALTA</td><td>SALTA</td></tr>
+ <tr><td>PF</td><td>C.S. LIBERTAD SALTA</td><td>MONS. TAVELLA Y EX COMB DE MALVINAS</td><td>SALTA</td><td>SALTA</td></tr>
+ <tr><td>PF</td><td>C.S. LIBERTAD SAN JUAN</td><td>AV. CIRCUNVALACION Y S. ORTIZ</td><td>SAN JUAN</td><td>SAN JUAN</td></tr>
+ <tr><td>PF</td><td>C.S. SAN JUAN</td><td>AV. LIBERTADOR  ESTE  315 LOCAL  2</td><td>SAN JUAN</td><td>SAN JUAN</td></tr>
+ <tr><td>PF</td><td>C.S. SAN JUAN II</td><td>GENERAL ACHA 342 SUR</td><td>SAN JUAN</td><td>SAN JUAN</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR SAN JUAN</td><td>GRAL. ACHA NORTE 32</td><td>SAN JUAN</td><td>SAN JUAN</td></tr>
+ <tr><td>PF</td><td>C.S. WAL MART SAN LUIS</td><td>AV. DEL FUNDADOR 1450</td><td>SAN LUIS</td><td>SAN LUIS</td></tr>
+ <tr><td>PF</td><td>C.S. SAN LUIS</td><td>GENERAL PAZ 820</td><td>SAN LUIS</td><td>SAN LUIS</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR VILLA MERCEDES SL</td><td>25 DE MAYO 876</td><td>VILLA MERCEDES</td><td>SAN LUIS</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR CALETA OLIVIA</td><td>HUMBERTO BEGHIN 762</td><td>CALETA OLIVIA</td><td>SANTA CRUZ</td></tr>
+ <tr><td>PF</td><td>C.S. CALETA OLIVIA</td><td>SAN MARTIN 156</td><td>CALETA OLIVIA</td><td>SANTA CRUZ</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR RIO GALLEGOS</td><td>AV. DR. NESTOR KIRCHNER 742</td><td>RIO GALLEGOS</td><td>SANTA CRUZ</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR RIO GALLEGOS II</td><td>PASEO DE LOS ARRIEROS 1098</td><td>RIO GALLEGOS</td><td>SANTA CRUZ</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR ROSARIO FISHERTON</td><td>AV. CIRCUNVALACION 1977 BIS</td><td>ROSARIO</td><td>SANTA FE</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR ROSARIO CENTRO</td><td>AV. PELLEGRINI 3250</td><td>ROSARIO</td><td>SANTA FE</td></tr>
+ <tr><td>PF</td><td>C.S. SHOPPING ROSARIO</td><td>CORDOBA 1358-64</td><td>ROSARIO</td><td>SANTA FE</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR ROSARIO SUR</td><td>NECOCHEA 2579</td><td>ROSARIO</td><td>SANTA FE</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR ROSARIO PUEYRREDON</td><td>PUEYRREDON 747</td><td>ROSARIO</td><td>SANTA FE</td></tr>
+ <tr><td>PF</td><td>C.S. WAL MART SANTA FE</td><td>RUTA 168 KM 473,6</td><td>SANTA FE</td><td>SANTA FE</td></tr>
+ <tr><td>PF</td><td>C.S. CHANGO MAS STGO DEL ESTERO</td><td>AV. BELGRANO 2622</td><td>SANTIAGO DEL ESTERO</td><td>SANTIAGO DEL ESTERO</td></tr>
+ <tr><td>PF</td><td>C.S. SANTIAGO DEL ESTERO</td><td>BUENOS AIRES 79</td><td>SANTIAGO DEL ESTERO</td><td>SANTIAGO DEL ESTERO</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR RIO GRANDE II</td><td>PERU 76</td><td>RIO GRANDE</td><td>TIERRA DEL FUEGO</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR USHUAIA</td><td>12 DE OCTUBRE 169</td><td>USHUAIA</td><td>TIERRA DEL FUEGO</td></tr>
+ <tr><td>PF</td><td>C.S. TUCUMAN</td><td>24 DE SEPTIEMBRE 770 PB.</td><td>SAN MIGUEL DE TUCUMAN</td><td>TUCUMAN</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR TUCUMAN III</td><td>AV. CATAMARCA 1116</td><td>SAN MIGUEL DE TUCUMAN</td><td>TUCUMAN</td></tr>
+ <tr><td>PF</td><td>C.S. LIBERTAD TUCUMAN II</td><td>CASTELAR Y SUIPACHA</td><td>SAN MIGUEL DE TUCUMAN</td><td>TUCUMAN</td></tr>
+ <tr><td>PF</td><td>C.S. ASISTIDO TUCUMAN</td><td>SAN MARTIN 421</td><td>SAN MIGUEL DE TUCUMAN</td><td>TUCUMAN</td></tr>
+ <tr><td>PF</td><td>C.S. CARREFOUR YERBA BUENA</td><td>AV. ACONQUIJA 1591</td><td>YERBA BUENA</td><td>TUCUMAN</td></tr>
+ <tr><td>PF</td><td>ROMINA GONZALEZ SEGUROS</td><td>CALLE 18 NRO 1012</td><td>25 DE MAYO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SALAPIM</td><td>CALLE 26 Y CALLE 13</td><td>25 DE MAYO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DESPENSA LAS NENAS</td><td>SAN LORENZO 157</td><td>30 DE AGOSTO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO MAGALY</td><td>ALBARRACIN 1663</td><td>9 DE ABRIL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS LA SEGUNDA</td><td>AV MITRE 1596</td><td>9 DE JULIO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>RSP SEGUROS</td><td>AV. MITRE 1266</td><td>9 DE JULIO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO KARI</td><td>ROBBIO 806</td><td>9 DE JULIO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS 208</td><td>CALLE 208 NRO.1348</td><td>ABASTO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ALVES VANESA SEGUROS GENERALES</td><td>RUTA PROVINCIAL 36 KM 48 500 LOCAL 2</td><td>ABASTO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA VIA NORTE 3</td><td>MANZONE 923</td><td>ACASSUSO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>COOP. AGRICOLA GANAD LTDA. DE ACEVEDO</td><td>AV. CENTENARIO Y CALLE 6</td><td>ACEVEDO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DISCO ALMIRANTE BROWN</td><td>AMENEDO 302</td><td>ADROGUE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ORGANIZACION ROJAS RUTA 4</td><td>AV MONTEVERDE 1446</td><td>ADROGUE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO MARTINA</td><td>BYNNON 1598</td><td>ADROGUE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>BALCARCE 2</td><td>MACIAS 615</td><td>ADROGUE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PAGOS EDUARDO</td><td>PLAZA BROWN 205</td><td>ADROGUE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DELEGACION MUNICIPAL AGUSTIN MOSCONI</td><td>CALLE 11 ENTRE 6 Y 8</td><td>AGUSTIN MOSCONI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SYN SEQUEIRA CARLOS (345)</td><td>10 DE JUNIO 71</td><td>ALBERTI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO AVENIDA ALBERTI</td><td>AV. VACCAREZZA 87</td><td>ALBERTI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LIBRERIA  BARRILETE</td><td>RIVADAVIA 371</td><td>ALBERTI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>TELERECARGAS 35 (035)</td><td>ALMIRANTE COCHRANE 1764</td><td>ALDO BONZI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LIONEL POLIRRUBRO</td><td>HUMAHUACA 935</td><td>ALDO BONZI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAFALDA II</td><td>LUIS GUANELLA 1149/50</td><td>ALDO BONZI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERVICIOS IBIS</td><td>KM 50 DE PANAMERICANA Y LAS MAGNOLIAS</td><td>ALMIRANTE IRIZAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AUTOSERVICIO LOS PIBES</td><td>RINCON 65</td><td>AMERICA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO LOS SANCHEZ</td><td>AV BELGRANO 88</td><td>ARRECIFES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO ARRECIFES</td><td>J F KENNEDY 602</td><td>ARRECIFES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SYN LOUGHLIN JOSE (585)</td><td>RICARDO GUTIERREZ 340</td><td>ARRECIFES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO CENTRO</td><td>RICARDO GUTIERREZ 510</td><td>ARRECIFES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SOC.ITA.DE SO.MUT.Y SOC.DEL CLUB SOC ARR</td><td>JUAN BAUTISTA ALBERDI 43</td><td>ARRIBENOS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>INMOBILIARIA BIANCHI</td><td>AV. SAN MARTIN 132</td><td>ASCENCION</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRUBRO EL ALBA</td><td>MITRE Y FERRARA</td><td>ATALAYA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO DULZURA S</td><td>ALSINA 124</td><td>AVELLANEDA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA CRUCESITA SCS</td><td>AV. MITRE 1471</td><td>AVELLANEDA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA DUCA</td><td>AV. MITRE 2412</td><td>AVELLANEDA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LIBRERIA TOMY MATE</td><td>AV. MITRE 312</td><td>AVELLANEDA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERVICIOS THIANA II</td><td>AV. MITRE 561</td><td>AVELLANEDA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA MAGA SHOP AVELLANEDA</td><td>AV. MITRE 637</td><td>AVELLANEDA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KISCO CHITO</td><td>BELGRANO 749</td><td>AVELLANEDA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO RICKY</td><td>BERUTI 307</td><td>AVELLANEDA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA BLANCO FARMA</td><td>GUEMES 1098</td><td>AVELLANEDA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA HEREDIA</td><td>LACARRA 1302</td><td>AVELLANEDA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA LACARRA</td><td>LACARRA 1702</td><td>AVELLANEDA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO NATY</td><td>SAN MARTIN 703</td><td>AVELLANEDA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA GRAN SARMIENTO</td><td>SARMIENTO 1700</td><td>AVELLANEDA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA JUANITA MKT ONE</td><td>SUAREZ 576</td><td>AVELLANEDA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>K CITY</td><td>MURGIER 801</td><td>AYACUCHO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>K CITY DEL CENTRO</td><td>SAENZ PENA 1002</td><td>AYACUCHO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA CLAVE</td><td>YRIGOYEN 1076</td><td>AYACUCHO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERCOB MITRE</td><td>AV MITRE 321</td><td>AZUL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO PIAZZA</td><td>AV PIAZZA 1146</td><td>AZUL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>JAMON DEL MEDIO</td><td>BOGLIANO 579</td><td>AZUL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA ESQUINA DEL VIENTO</td><td>BURGOS  547</td><td>AZUL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO PLATA DULCE</td><td>BURGOS 401</td><td>AZUL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PF GROUP 4</td><td>BURGOS 656</td><td>AZUL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO CHAPLIN</td><td>HIPOLITO YRIGOYEN 750</td><td>AZUL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA 27</td><td>IRIGOYEN 770</td><td>AZUL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MERCADO MAIPU</td><td>MAIPU NORTE 585</td><td>AZUL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA ESQUINA DE MI BARRIO</td><td>MALVINAS  1101</td><td>AZUL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ORGANIZACION FRANGI DINARDI</td><td>MORENO 691</td><td>AZUL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SYN SMITH NNCY  (14)</td><td>RIVADAVIA NORTE 100</td><td>AZUL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MI DESPENSITA</td><td>12 DE OCTUBRE 1111</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PET SHOP WESSEX</td><td>12 DE OCTUBRE 207</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA EL GORDO 66</td><td>14 DE JULIO 3319</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MINIMERCADO EZE</td><td>19 DE MAYO 1141</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DRUGSTORE PUNTO 4</td><td>ALSINA 13</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LUNA NUEVA 3 CRS</td><td>ALVARADO 277</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>TIENDA MODA ERES</td><td>AV. ARIAS 2088</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ALMACEN DE COSAS RICAS</td><td>BAIGORRIA 4638</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO BELGRANO</td><td>BELGRANO 40</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>GUTICOPIAS</td><td>BRANSEN 394</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DRUGSTORE PUNTO 2</td><td>BROWN 98</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO CANDY</td><td>CERVANTES 705</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MULTIKIOSCO JUMACA</td><td>CRAMER 609</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ALMACEN HILDA CRS</td><td>ENTRE RIOS 1892</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA BOUTIQUE 2</td><td>ESTOMBA 242</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO VICENTE LOPEZ</td><td>FORTINERO 387</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MULTIRUBRO LOCOS POR EL POLLO</td><td>GENERAL PAZ 93</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SUPERMERCADO CEFERINO</td><td>HOLDICH 1991</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SUPER MAR K</td><td>MALVINAS 2140</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO LA ESQUINA (BA)</td><td>MISIONEROS 799</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO GUADA</td><td>MORENO 602</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRUBRO MAR LUC</td><td>MORENO 64</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DRUGSTORE LA CAFETERA</td><td>MORENO 89</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DRUGSTORE PUNTO 3</td><td>O HIGGINS 309</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRUBRO LAS MARIAS</td><td>PAMPA CENTRAL 1290</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LUNA NUEVA 1 CRS</td><td>PELLEGRINI 702</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ORGANIZACION FESER</td><td>PERITO MORENO 2133</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MARICAR</td><td>RINCON 355</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DESPENSA LA PAMPITA</td><td>RIO NEGRO 1119</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>Q IDEA SERVICIOS GRAFICOS</td><td>THOMPSON 1134</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERVICIOS CONIGLIO</td><td>TIERRA DEL FUEGO 2170</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA CHISTIK</td><td>VIEYTES 1460</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CRAZY SHOES</td><td>ZELARRAYAN 2156</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO USHUAIA CRS</td><td>ZELARRAYAN 679</td><td>BAHIA BLANCA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERCOB BALCARCE</td><td>AV FAVALORO 718</td><td>BALCARCE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FA24</td><td>AV. CHAVES 485</td><td>BALCARCE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERCOB BALCARCE II</td><td>CALLE 17 N°490</td><td>BALCARCE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO CENTRO</td><td>CALLE 18 659</td><td>BALCARCE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO 1979</td><td>CALLE 21 NRO 692</td><td>BALCARCE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MACU</td><td>CALLE 22 NRO 665</td><td>BALCARCE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAURO SURT</td><td>CALLE 31 NRO 652</td><td>BALCARCE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EL PAISA</td><td>CALLE 55  835</td><td>BALCARCE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SUPERMERCADO SAN NICOLAS</td><td>AV. COBO 187</td><td>BALNEARIO MAR CHIQUITA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SYN PILDAIN MIRTA (467)</td><td>ING WHITE 340</td><td>BANDERALO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>TA TE TI INDUMENTARIA</td><td>PIO MANSRAMON 302</td><td>BANDERALO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>GABYSER</td><td>CLAUDIO DE ALAS 2579</td><td>BANFIELD</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO LOS ANDES</td><td>EJERCITO DE LOS ANDES 651</td><td>BANFIELD</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA UEKADO</td><td>GABRIELA MISTRAL 6</td><td>BANFIELD</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO CALI</td><td>JOSE INGENIEROS 1851</td><td>BANFIELD</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA ESQUINA</td><td>JUAN BRUNO TAVANO 1798</td><td>BANFIELD</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CYBERKIOSCO LOS DIABLITOS</td><td>LISANDRO DE LA TORRE 2053</td><td>BANFIELD</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SPEED COMPUTACION</td><td>M. RODRIGUEZ 1395</td><td>BANFIELD</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO GMG</td><td>MAIPU 471</td><td>BANFIELD</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>VALJUA</td><td>SANTA FE 975</td><td>BANFIELD</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DISCO BANFIELD</td><td>VIEYTES 1046</td><td>BANFIELD</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>GESTORIA NACIONAL</td><td>AVDA SAN MARTIN 1469</td><td>BARADERO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>VENTA DE PASAJES</td><td>SAN MARTIN 1019</td><td>BARADERO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS FUNES OFICINA</td><td>AV. PTE PERON 9478</td><td>BARRIO BATAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CHARRUAS</td><td>PUAN 1752</td><td>BARRIO CAISAMAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERVICIOS VAZQUEZ</td><td>CALLE 7 ENTRE 24 Y 26</td><td>BARRIO CHAPADMALAL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LIBRERIA AL COMPAS</td><td>AV. SAN MARTIN 2819</td><td>BARRIO EL CAZADOR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FINANCAL</td><td>MARTIN FIERRO 2921 P 2 DTO 211</td><td>BARRIO PARQUE LELOIR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>VIA NORTE ROLON</td><td>JOSE INGENIEROS 1516</td><td>BECCAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA VIA NORTE 10</td><td>JOSE INGENIEROS 2087</td><td>BECCAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA AGENCIA VIA NORTE ROLON</td><td>ROLON 2183</td><td>BECCAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA-AGENCIA ESCOBAR 2</td><td>25 DE MAYO 1340</td><td>BELEN DE ESCOBAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CENTRO REY ESCOBAR</td><td>25 DE MAYO 952</td><td>BELEN DE ESCOBAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS FERNANDEZ 1</td><td>25 DE MAYO 953</td><td>BELEN DE ESCOBAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>COCATRA 3</td><td>ASBORNO 1177</td><td>BELEN DE ESCOBAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA AGENCIA BELEN 3</td><td>ASBORNO 1585</td><td>BELEN DE ESCOBAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERVICIOS DAIANA</td><td>ASBORNO 587 LOCAL 6</td><td>BELEN DE ESCOBAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA AGENCIA BELEN 2</td><td>AV SAN MARTIN 300</td><td>BELEN DE ESCOBAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS RIZZO</td><td>AV. 25 DE MAYO 521</td><td>BELEN DE ESCOBAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>TELECENTRO WILL</td><td>CORRIENTES 2591</td><td>BELEN DE ESCOBAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA AGENCIA EL 22 UNO</td><td>ESTRADA 904</td><td>BELEN DE ESCOBAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA LA GRAN 7</td><td>LAS ORQUIDEAS 1107</td><td>BELEN DE ESCOBAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA EL REY DE LA SUERTE 20</td><td>MANSILLA 232</td><td>BELEN DE ESCOBAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERVICIOS EASY ESCOBAR</td><td>PANAMERICANA Y RUTA 25 PORTAL ESCOBAR</td><td>BELEN DE ESCOBAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CIBER FULL</td><td>AV. SAN MARTIN 401</td><td>BELLA VISTA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LIBRERIA POLYSU</td><td>AV. SENADOR MORON 1218</td><td>BELLA VISTA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA ESPERANZA</td><td>EVA DUARTE 2564</td><td>BELLA VISTA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CREDITO PARA EMPRENDEDORES</td><td>PINERO 930</td><td>BELLA VISTA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ORGANIZACION DOMANICO BELLA VISTA</td><td>SENADOR MORON 603</td><td>BELLA VISTA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DISCO BELLA VISTA</td><td>SENADOR MORON 980</td><td>BELLA VISTA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>COTILLON LOLLI POP</td><td>ALVEAR 2714</td><td>BENAVIDEZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS MAY BENAVIDEZ</td><td>AV ALVEAR 3037</td><td>BENAVIDEZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS DA.R</td><td>AV. DE LOS CONSTITUYENTES 6704</td><td>BENAVIDEZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA EL REY DE LA SUERTE 8</td><td>CALLE 1 NRO 1709</td><td>BENAVIDEZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ALMACEN ELEYON</td><td>DEAN FUNES 3245</td><td>BENAVIDEZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MULTIPAGO 2</td><td>AV LIBERTAD 91</td><td>BENITO JUAREZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MULTIPAGO(BA)</td><td>MARIANO ROLDAN 37</td><td>BENITO JUAREZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CAMBIO DEM S.A.S</td><td>15  N 4697</td><td>BERAZATEGUI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MINIMERCADO CHICHO BERAZATEGUI</td><td>AV FLORENCIO VARELA 3598</td><td>BERAZATEGUI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA ZITWA</td><td>AV. 21 N 725</td><td>BERAZATEGUI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EL BOCHI</td><td>AV. 21 NRO 3702</td><td>BERAZATEGUI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA MILAYA II</td><td>AV. VERGARA 98</td><td>BERAZATEGUI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO AXEL</td><td>AV.14  N 4754</td><td>BERAZATEGUI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>VENTA DE PASAJES BEGUIGOLD II</td><td>AV.14 N 4361</td><td>BERAZATEGUI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAGADAN</td><td>AV.14 NRO 4325</td><td>BERAZATEGUI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>URIONA</td><td>AVENIDA 14 5254</td><td>BERAZATEGUI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CENTRO DE SERVICOS POMPEYA</td><td>CALLE 11O A NRO 92</td><td>BERAZATEGUI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ALMACEN MI BEBE</td><td>CALLE 138 NRO 1307</td><td>BERAZATEGUI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>RAMIRO II</td><td>CALLE 14 NRO 3944</td><td>BERAZATEGUI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>JUAREZ CONFORT BERAZATEGUI</td><td>CALLE 14 NRO 4133</td><td>BERAZATEGUI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO MALE</td><td>CALLE 18 NRO 5727</td><td>BERAZATEGUI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ALMACEN MIA</td><td>CALLE 19 NRO 5707</td><td>BERAZATEGUI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA TIENDITA</td><td>CALLE 28 Y CALLE 113</td><td>BERAZATEGUI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA SORIA Y CHAVES</td><td>CALLE 7 NRO 1198</td><td>BERAZATEGUI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO BERAZATEGUI</td><td>LISANDRO DE LA TORRE 1502</td><td>BERAZATEGUI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>RAMIRO 3</td><td>LISANDRO DE LA TORRE N 1580 (LOCAL 11)</td><td>BERAZATEGUI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA MUTUAL DUCILO</td><td>MITRE  442</td><td>BERAZATEGUI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LO DE PASCUAL</td><td>CALLE 9 N 693</td><td>BERISSO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ALDANA FOTOCOPIAS</td><td>MONTEVIDEO 1033</td><td>BERISSO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PRESTAMOS ARGENTINOS</td><td>MONTEVIDEO 743</td><td>BERISSO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA GENA 1</td><td>CALLE 168 (A.E. JOFRE) 2540</td><td>BERNAL ESTE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA MAGA SHOP II</td><td>LEBENSOHN 11</td><td>BERNAL ESTE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA IRRAZABAL</td><td>CNO GRAL BELGRANO 963</td><td>BERNAL OESTE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LIBRERIA ILUSIONES</td><td>LOS ANDES 3814</td><td>BERNAL OESTE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA MAGA SHOP BERNAL</td><td>SAN MARTIN 756</td><td>BERNAL OESTE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PAGOS DANSI</td><td>ZAPIOLA 1713</td><td>BERNAL OESTE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>A-Z OFICINA DE SEGUROS</td><td>BOULEVAR BAVIO 683</td><td>BME BAVIO GRAL MANSILLA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CYBER SISTEMAS</td><td>AV. SAN MARTIN 471</td><td>BOLIVAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CYBER EL SITIO</td><td>AV. SAN MARTIN 891</td><td>BOLIVAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ACTUAL SUPERMERCADOS III</td><td>AVENIDA BROWN 554</td><td>BOLIVAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ACTUAL SUPERMERCADOS II</td><td>AVENIDA LAVALLE 425</td><td>BOLIVAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EL KIOSCO DE SILVIA</td><td>PASO 411</td><td>BOLIVAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERVICIO INTEGRAL</td><td>CALLE 938 NRO 1421</td><td>BOSQUES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>BAIKAL</td><td>GABRIEL DANUNCIO 626</td><td>BOSQUES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERVICIO INTEGRAL II</td><td>LUJAN 1024</td><td>BOSQUES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERVICIO INTEGRAL III</td><td>PABLO PODESTA 1517</td><td>BOSQUES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA VAREADORES</td><td>AV. ANTONIO SAENZ 2146</td><td>BOULOGNE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA CATANIA</td><td>BERNARDO DE IRIGOYEN 1808</td><td>BOULOGNE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DELTA-BOULOGNE</td><td>BERNARDO DE IRIGOYEN 555</td><td>BOULOGNE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA EL REY DE LA SUERTE CAPITAN</td><td>CAPITAN DE SAN MARTIN 1476</td><td>BOULOGNE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA ROLON</td><td>ROLON 787</td><td>BOULOGNE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA EL REY DE LA SUERTE 4</td><td>SARRATEA 495</td><td>BOULOGNE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ORGANIZACION ROMEO</td><td>ITALIA 220</td><td>BRAGADO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS GORJON</td><td>PRINGLES 10</td><td>BRAGADO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>REGALERIA AGUAMARINA</td><td>RIVADAVIA 1382</td><td>BRAGADO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EPN ZONA PC</td><td>CARLOS PELLEGRINI 619</td><td>BURZACO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>BOSTONCRED BURZACO</td><td>CARLOS PELLEGRINI 882</td><td>BURZACO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CLAN BURZACO</td><td>JUAN XXIII 3051</td><td>BURZACO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMA ROCA 24</td><td>JULIO A. ROCA 849</td><td>BURZACO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA FER</td><td>PEDRO GOYENA 1097</td><td>BURZACO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA ESCONDIDA</td><td>SAN MARTIN 1705</td><td>CACHARI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO AVENIDA CAMPANA</td><td>AV. INT. J. R. VARELA 599</td><td>CAMPANA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA PAGO AL TOQUE 3</td><td>LARRABURE 1498</td><td>CAMPANA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>TELECENTRO CAMPANA</td><td>MITRE 1110</td><td>CAMPANA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA ESQUINA DECO</td><td>RAWSON 108</td><td>CAMPANA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PUERTO VIRTUAL DISCO CANNING</td><td>AV PEDRO DREYER Y RUTA 52</td><td>CANNING</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>R.T.F</td><td>LAGOS ARGENTINOS 697</td><td>CANNING</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>VEA CANUELAS ARRANCA PARAGOLPES</td><td>AZCUENAGA 738</td><td>CANUELAS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>BOSTON CRED CANUELAS</td><td>LARA 800</td><td>CANUELAS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MARISCOTTI SEGUROS</td><td>MITRE 883</td><td>CANUELAS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>COCATRA</td><td>MORENO 965</td><td>CANUELAS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO B Y B</td><td>RIVADAVIA 1707</td><td>CANUELAS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DESPENSA SAN VICENTE</td><td>SAN VICENTE 645</td><td>CANUELAS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LE CIEL MODAS</td><td>AV. PERON 287</td><td>CAPITAN SARMIENTO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ERASE UNA VEZ LIBRERIA</td><td>CARLOS URIOSTE 1172</td><td>CAPITAN SARMIENTO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO IVAN</td><td>CENTENARIO 400</td><td>CAPITAN SARMIENTO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SYN AUTOSERVICIO 5HNOS (609)</td><td>LA PAMPA 338</td><td>CAPITAN SARMIENTO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DESPENSA TOMY</td><td>LA PLATA  786</td><td>CAPITAN SARMIENTO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA PLAZA KIOSCO</td><td>RIVADAVIA 1055</td><td>CAPITAN SARMIENTO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SYN MEDINA (479)</td><td>SANTA FE 1477</td><td>CAPITAN SARMIENTO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO DANI</td><td>DRYSDALE 5794</td><td>CARAPACHAY</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERVICIOS CARAPACHAY</td><td>INDEPENDENCIA 2754</td><td>CARAPACHAY</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRUBRO RANA</td><td>DIVISADERO Y AVELLANOS - PASEO LOCAL 12</td><td>CARILO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>H.F. COMUNICACIONES</td><td>AV. SAN MARTIN 451</td><td>CARLOS CASARES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAX HOGAR</td><td>GUIDO 525</td><td>CARLOS CASARES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AUTOSERVICIO LA FAMILIA</td><td>EMILIO MITRE 1043</td><td>CARLOS KEEN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ICA 24 SPEGAZZINNI</td><td>CORDOBA 20</td><td>CARLOS SPEGAZZINI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ORGANIZACION MP SPEGAZZINI</td><td>ROCA 47</td><td>CARLOS SPEGAZZINI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>VIDEOCLUB IMAGEN</td><td>SARMIENTO 299</td><td>CARLOS SPEGAZZINI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO IRIGOYEN</td><td>JONAS SALK 114</td><td>CARLOS TEJEDOR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MANIA'S MAXIKIOSCO</td><td>MITRE 734</td><td>CARMEN DE ARECO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MUNDO MUEBLE</td><td>MITRE Y RIVADAVIA</td><td>CARMEN DE ARECO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SYN MUGETTI MAGDALENA (584)</td><td>MUNOZ 665</td><td>CARMEN DE ARECO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CALZADOS FULL SPORT</td><td>HIPOLITO IRIGOYEN 235</td><td>CARMEN DE PATAGONES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CALZADOS RAFAGA SPORT</td><td>HIRIGOYEN 32</td><td>CARMEN DE PATAGONES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DESPENSA MABEL</td><td>PASAJE ANTARTIDA ARGENTINA 537</td><td>CARMEN DE PATAGONES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ARTICULOS DEL HOGAR CASA PASCUAL</td><td>H. YRIGOYEN 684</td><td>CASBAS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PEREZ ASOC CASEROS</td><td>AV BARTOLOME MITRE 3108</td><td>CASEROS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EL TUNEL</td><td>AV SAN MARTIN 2450</td><td>CASEROS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA RUGGI</td><td>AV SAN MARTIN 3295</td><td>CASEROS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>VEA CASEROS</td><td>B.MITRE 4636</td><td>CASEROS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRUBRO INTEGRAL BELGRANO</td><td>BELGRANO 5112</td><td>CASEROS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EL PARQUE</td><td>CHICLANA 2889</td><td>CASEROS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ZE.NA HNOS</td><td>SAN MARTIN 2150</td><td>CASEROS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PAGOS 3 DE FEBRERO</td><td>TRES DE FEBRERO 3798</td><td>CASEROS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA FIJA</td><td>URQUIZA 4750 LOCA 3</td><td>CASEROS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AMPARA</td><td>URQUIZA 5128</td><td>CASEROS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DISCO CASTELAR NORTE</td><td>AV I ARIAS 3247</td><td>CASTELAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>YPF CASTELAR SUR</td><td>AV RIVADAVIA 21190</td><td>CASTELAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ATM CASTELAR</td><td>AV SANTA ROSA 2383</td><td>CASTELAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA KATABIAN</td><td>AV. CALLAO 1591</td><td>CASTELAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FIAMBRERIA LOS INCAS</td><td>AV. J. MANUEL DE ROSAS 689</td><td>CASTELAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRUBRO OSKI</td><td>CURUCHET 3366</td><td>CASTELAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO DITUTTO</td><td>GRAL. ARIAS 2352</td><td>CASTELAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO INTI</td><td>JUAN MANUEL DE ROSAS 348</td><td>CASTELAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS AYALA TORRES</td><td>PTE PERON 4216</td><td>CASTELAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CASTELAR SHOP</td><td>RIVADAVIA 20058</td><td>CASTELAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>GESTORIA BINAGHI</td><td>DORREGO 740</td><td>CASTELLI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PIPI CUCU</td><td>PELLEGRINI 301</td><td>CASTELLI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO EL ROJO</td><td>SAN MARTIN 23</td><td>CASTELLI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SYN SCALISE DANIELA (6740)</td><td>ALBERDI 310</td><td>CHACABUCO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SYN CELULOIDE (454)</td><td>ALMIRANTE BROWN 101</td><td>CHACABUCO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SYN BIONDINI MARINA (125)</td><td>AV ALSINA 41</td><td>CHACABUCO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ORGANIZACION MITIDIERI</td><td>AV GARAY 37</td><td>CHACABUCO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SYN GIOIA GABRIELA (255)</td><td>AV GARAY 601</td><td>CHACABUCO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SYN BUSS EMANUEL (253)</td><td>AV GARAY Y SALTA</td><td>CHACABUCO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SYN BOTTA NICOLAS (017)</td><td>AV. ALSINA 104</td><td>CHACABUCO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SYN KIOSCO MONEDITA (215)</td><td>AV. ARENALES 165</td><td>CHACABUCO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SYN SANCHEZ ROCIO 2 (504)</td><td>AV. MIGUEL GIL 250</td><td>CHACABUCO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SYN CRISTIAN JHONES SEGUROS (645)</td><td>AV. MIGUEL GIL 70</td><td>CHACABUCO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>WM COMUNICACIONES</td><td>AV. SOLIS 145</td><td>CHACABUCO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SYN PAVESE (103)</td><td>AV. VIEYTES 252</td><td>CHACABUCO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SYN VOLPINI MAURICIO (657)</td><td>AV.COLON 7</td><td>CHACABUCO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SYN LIBRERIA ARIES (29)</td><td>ITALIA 34</td><td>CHACABUCO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SYN LO DE NORMA (193)</td><td>ITUZAINGO 350</td><td>CHACABUCO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SYN BANANA RANA (540)</td><td>MORENO 18</td><td>CHACABUCO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SYN IRIART SUSANA (16)</td><td>PRIMERA JUNTA 116</td><td>CHACABUCO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LIBRERIA ABC</td><td>QUINTANA 154</td><td>CHACABUCO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MUTUAL SOCIOS C. S. BARRACAS Y U. FSA  I</td><td>SAAVEDRA 96</td><td>CHACABUCO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>GESTORIA CHASCOMUS</td><td>ALVEAR 105</td><td>CHASCOMUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MULTIKIOSCO DEL SABOR</td><td>BELGRANO 469</td><td>CHASCOMUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>P24 CHASCOMUS</td><td>BELGRANO 94BIS</td><td>CHASCOMUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRUBRO R & D</td><td>FRANKLIN 233</td><td>CHASCOMUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS TELLO</td><td>AV VILLARINO 350</td><td>CHIVILCOY</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA BOGLIOLO</td><td>AV. 22 DE OCTUBRE 184</td><td>CHIVILCOY</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DRAGSTORE MIX II</td><td>AV. CALIXTO CALDERON 468</td><td>CHIVILCOY</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CITY SHOP</td><td>AV. SOAREZ 187</td><td>CHIVILCOY</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO FACCINI</td><td>AVDA SOAREZ 289</td><td>CHIVILCOY</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEDNA POLIRUBRO</td><td>GUEMES 438</td><td>CHIVILCOY</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MINIMERCADO AL PASO</td><td>MONS. D ANDREA 268</td><td>CHIVILCOY</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DRAGSTORE MIX I</td><td>MORENO 57</td><td>CHIVILCOY</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>VITAX MAXIKIOSCO</td><td>OLAVARRIA 103</td><td>CHIVILCOY</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>GRUPO CASULLO</td><td>PELLEGRINI 295</td><td>CHIVILCOY</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LIBRERIA SOL</td><td>PUEYRREDON 450</td><td>CHIVILCOY</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DRAGSTORE MIX</td><td>RIVADAVIA  118</td><td>CHIVILCOY</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MEGAMIX III</td><td>SARMIENTO 383</td><td>CHIVILCOY</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO VICENTE LOPEZ</td><td>VICENTE LOPEZ 20</td><td>CHIVILCOY</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>A&M PROD.ASESORES DE SEGUROS C.EVITA</td><td>PERON 1598</td><td>CIUDAD EVITA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FLOPY II</td><td>PERON 2213</td><td>CIUDAD EVITA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PAGOS RODRIGUEZ</td><td>REINALDA RODRIGUEZ 3693</td><td>CIUDAD EVITA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SAN JORGE PET II</td><td>GENERAL PICO 14</td><td>CIUDAD MADERO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA CIUDAD MADERO</td><td>PEDRO DE MENDOZA 1425</td><td>CIUDAD MADERO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SOCIEDAD DE FOMENTO Y CULTURA</td><td>PRIMERA JUNTA 876</td><td>CIUDAD MADERO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ORGANIZACION VAZQUEZ FULL</td><td>V SARSFILED 470</td><td>CIUDAD MADERO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PAGOS VELEZ SARFIELD</td><td>VELEZ SARFIELD 721</td><td>CIUDAD MADERO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRRUBRO LOPEZ TAFUR</td><td>AV. DIAZ VELEZ 910</td><td>CIUDADELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA COCOLISO</td><td>AV. GAONA 1879</td><td>CIUDADELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CLASSBLUE CIUDADELA</td><td>CORONEL RAMON L FALCON 3158</td><td>CIUDADELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA AGENCIA POR FIN</td><td>GARCIA LORCA 2501</td><td>CIUDADELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO MAURO</td><td>SAN AGUSTIN 1277</td><td>CIUDADELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO CARNAVAL</td><td>CALLE 29 NRO 2005</td><td>CLAROMECO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAURO DE CLAY</td><td>ALCORTA 4462</td><td>CLAYPOLE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA BUENOS MUCHACHOS</td><td>AV.LACAZE 6572</td><td>CLAYPOLE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SALABERRY</td><td>DOMINGO SALABERRY 150</td><td>CLAYPOLE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LUTAC 1</td><td>LACAZE 5390</td><td>CLAYPOLE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PARDINI AUTOMOTORES</td><td>SALABERRY 80</td><td>CLAYPOLE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS ANGEL</td><td>SAN MARTIN 2616</td><td>CLAYPOLE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRUBRO DIEMAR</td><td>42 819</td><td>COLON</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DESPENSA SALEMME</td><td>45 Y 15</td><td>COLON</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>G Y G COMPUTACION</td><td>CALLE 16 Y CALLE 49</td><td>COLON</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MUTUAL SOCIOS C. S. BARRACAS Y U. FSA II</td><td>CALLE 47 NRO 1085</td><td>COLON</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CYBER KIOSCO FUTURAMA</td><td>CALLE 48 Y CALLE 22</td><td>COLON</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRUBRO PLAZA</td><td>CALLE 49 ENTRE 16 Y 17</td><td>COLON</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MERLIN</td><td>CALLE 51 NRO 578</td><td>COLON</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERCOB HINOJO</td><td>GRANATA Y BASTARRICA</td><td>COLONIA HINOJO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ESTACION DE SERVICIO COLONIA SERE</td><td>AV. BELGRANO 467</td><td>COLONIA SERE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CASA SUSU</td><td>AV BALBINA OTAMENDI 2084</td><td>COMANDANTE N OTAMENDI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>RECEPTORIA TONDATO</td><td>ALBERTI 819</td><td>CORONEL BRANDSEN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ORGANIZACION ROIGE</td><td>GARAY 744</td><td>CORONEL CHARLONE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO LOS CHICOS</td><td>AV. ROCA 1339</td><td>CORONEL DORREGO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO INDEPENDIENTE</td><td>SAN MARTIN 598</td><td>CORONEL DORREGO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO KIME</td><td>AV. 25 DE MAYO 246</td><td>CORONEL PRINGLES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PHONE & FAX</td><td>DORREGO 1035</td><td>CORONEL PRINGLES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MI MEDIA NARANJA</td><td>AV URIBURU 419</td><td>CORONEL SUAREZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SALUDABLEMENTE</td><td>HIPOLITO IRIGOYEN 1026</td><td>CORONEL SUAREZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO SARMIENTO</td><td>SARMIENTO Y MITRE</td><td>CORONEL SUAREZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MEGASTORE TATIANA</td><td>AV. BOLIVAR 236</td><td>DAIREAUX</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AUTOSERVICIO TATIANA</td><td>BOLIVAR 501</td><td>DAIREAUX</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FOTOCOPIAS LUMIFOT</td><td>PELLEGRINI 286</td><td>DAIREAUX</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PANALERA TUTTY</td><td>PELLEGRINI 454</td><td>DAIREAUX</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ACTUAL SUPERMERCADOS IV</td><td>ROCA 363</td><td>DAIREAUX</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA EMANCIPACION</td><td>DOCTOR MAGADAN 85</td><td>DARREGUEIRA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRUBRO BECCARIAS</td><td>THAMES 165</td><td>DE LA GARMA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DELEGACION MUNICIPAL DEL VALLE</td><td>CALLE 10 ENTRE 1 Y 3</td><td>DEL VALLE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ANDREA TURISMO</td><td>12 DE OCTUBRE (COLECTORA) 3235 LOC 1</td><td>DEL VISO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA ALDASORO</td><td>AV. CONSTITUCION 3412</td><td>DEL VISO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA DE LA RUTA</td><td>AV. CONSTITUCION 417</td><td>DEL VISO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA EL REY DE LA SUERTE 18</td><td>AV. MADERO 1040</td><td>DEL VISO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ABS SEGUROS GENERALES</td><td>AV. MADERO 769</td><td>DEL VISO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA REY DEL VISO</td><td>CASTRO FRANCO 3359</td><td>DEL VISO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LIBRERIA LOS GIRASOLES</td><td>JUAN 23 5603</td><td>DEL VISO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SIMPLE SERVICIOS 2</td><td>LAS CAMELIAS 3190,EDIFICIO PLAZA LOCAL 3</td><td>DEL VISO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LO DE GERO</td><td>LOS MALVONES 3190</td><td>DEL VISO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA ACCESO NORTE II</td><td>RUTA 26 Y PACHECO</td><td>DEL VISO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>VILA TERRA PATAGONIA</td><td>BVD DE TODOS LOS SANTOS 100 LOC 27</td><td>DIQUE LUJAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DAME LA PATA</td><td>CAMPANA 1059</td><td>DOCK SUD</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MULTIKIOSCO RINCON PATAGONICO</td><td>ALBERDI 101</td><td>DOLORES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DESPENSA MDG</td><td>BUENOS AIRES 101</td><td>DOLORES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA MARASCO</td><td>BUENOS AIRES 717</td><td>DOLORES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRUBRO KED</td><td>OLAVARRIA 574</td><td>DOLORES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA BRUNO</td><td>AV. PRESIDENTE ILLIA 2</td><td>DOMINGO FAUSTINO SARMIENT</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXI GUILLE</td><td>ALTE. BROWN 1638</td><td>DON TORCUATO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CENTRO REY DON TOR CUATO</td><td>ALVEAR 520</td><td>DON TORCUATO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA AGENCIA DONTORCUATO</td><td>ANGEL T DE ALVER 2262</td><td>DON TORCUATO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA HERNANDEZ 2</td><td>GENERAL PACHECO 2734</td><td>DON TORCUATO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ZTE PERFUMERIA</td><td>SAAVEDRA 992</td><td>DON TORCUATO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA ISIDORO</td><td>TRIUNVIRATO 1515</td><td>DON TORCUATO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA BARCELO</td><td>SARMIENTO 550</td><td>DOYLE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>INDEPENDENCIA</td><td>9 DE JULIO 1811</td><td>EL JAGUEL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>GM SEGUROS EL JAGUEL</td><td>DOCTOR ANGEL ROTTA 2825</td><td>EL JAGUEL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRUBRO SOUL MASTER</td><td>EDISON 1276</td><td>EL JAGUEL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PF PALOMAR II</td><td>BVD SAN MARTIN 3123</td><td>EL PALOMAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PELUQUERIA CANINA FABI</td><td>RAFAEL AMATO 1308</td><td>EL PALOMAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LAS CUNADAS</td><td>TTE. GRAL. BERGAMINI 1957</td><td>EL PALOMAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>GESTORIA Y SEGUROS C Y G</td><td>519 N 1660</td><td>EL PATO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PAGO ACA TALAR</td><td>CURUPAYTI 340</td><td>EL TALAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DELEGACION TALAR 2</td><td>PASTEUR 1319</td><td>EL TALAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ESPACIOS BUNGE</td><td>SARGENTO CABRAL Y E. BUNGE</td><td>EMILIO BUNGE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO GASTON</td><td>AREVALO 3020</td><td>EMPALME LOBOS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DELEGACION MUNICIPAL ERNESTINA</td><td>ENRIQUE KEEN S/N (ESTACION FERROCARRIL)</td><td>ERNESTINA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PAGOS EZEIZA</td><td>AVELLANEDA 191</td><td>EZEIZA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>THOALEX</td><td>EMILIO MITRE 287</td><td>EZEIZA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EPN CAMARA DE COMERCIO DE JOSE M. EZEIZA</td><td>ESTEBAN ECHEVERRIA 169</td><td>EZEIZA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PF GROUP 2</td><td>FRENCH 67 L 3</td><td>EZEIZA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EPN SEGUROS PABLO LOPEZ</td><td>FRENCH 876</td><td>EZEIZA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MUNDO MUEBLES EZEIZA I SAN LORENZO</td><td>FRENCH 976</td><td>EZEIZA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>OGM EZEIZA</td><td>LAS HERAS 139</td><td>EZEIZA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ICA 24 EZEIZA</td><td>PEDRO  PRAVAS 107</td><td>EZEIZA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DALILA</td><td>PEDRO PRAVAS 217</td><td>EZEIZA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>P24 EZEIZA</td><td>PTE NESTOR KIRCHNER 895</td><td>EZEIZA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO GABI</td><td>RIVADAVIA 906</td><td>EZEIZA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA EZPELETA II</td><td>AV. MITRE 4733</td><td>EZPELETA ESTE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LIBRERIA MATRIX</td><td>MONROE 5217 DTO 2</td><td>EZPELETA ESTE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA GIL</td><td>ASUNCION 5320</td><td>EZPELETA OESTE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>BRUNO</td><td>AV. FLORENCIO VARELA 979</td><td>EZPELETA OESTE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO EL DORADO</td><td>OSCAR SMITH 2302</td><td>EZPELETA OESTE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EPN SUPER KIOSCO YASIRETA</td><td>TORCUATO DE ALVEAR 3997</td><td>EZPELETA OESTE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MINISHOP MAR-EM</td><td>MARIA AUXILIADORA 252</td><td>FERRE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PISANI</td><td>638 CONCEJAL ESTEBAN PISANI N 1627</td><td>FLORENCIO VARELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO Y CIBER ACTIVA 2</td><td>ALBERDI 2931</td><td>FLORENCIO VARELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>P F ZENSABELLO</td><td>AV ZENSABELLO N 1466</td><td>FLORENCIO VARELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>GRUPO DI CORINTO</td><td>AV.SAN MARTIN 2001</td><td>FLORENCIO VARELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EPN FORRAJERIA PRUNA</td><td>AVENIDA GRAL SAN MARTIN 1129</td><td>FLORENCIO VARELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LGM SERVICIOS III</td><td>C G BELGRANO 6314</td><td>FLORENCIO VARELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CAMARA DE COMERCIO F VARELA</td><td>CALLE 224 NRO 249</td><td>FLORENCIO VARELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO VLF</td><td>EL ZONDA 1668</td><td>FLORENCIO VARELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO VARELA</td><td>ENTRE RIOS 3502</td><td>FLORENCIO VARELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA MOROCHA III</td><td>FINOCHIETTO 2251</td><td>FLORENCIO VARELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>P24 CRUCE VARELA</td><td>IRIGOYEN 1962</td><td>FLORENCIO VARELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EL BUNKER</td><td>MALAMBO N 388</td><td>FLORENCIO VARELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRUBRO MATU</td><td>MARTIN FIERRO 1545</td><td>FLORENCIO VARELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ALMACEN LA CURVA</td><td>MONSERRAT 296</td><td>FLORENCIO VARELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO TELEFONICA</td><td>PERON 238</td><td>FLORENCIO VARELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AUTOSERVICIO DIFUNTA CORREA II</td><td>PINZON 3939</td><td>FLORENCIO VARELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA MIRANDA SANCHEZ</td><td>RIO SAMBOROMBON 2261</td><td>FLORENCIO VARELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>P.F. ZENSABELLO II</td><td>SENZABELLO N 1466 LOCAL 2</td><td>FLORENCIO VARELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>L. Y G.</td><td>SENZABELLO N 736</td><td>FLORENCIO VARELA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA YRIGOYEN</td><td>AV HIPOLITO YRIGOYEN 4042</td><td>FLORIDA OESTE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA MITRE</td><td>AV. MITRE 1484</td><td>FLORIDA OESTE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA LT MAIPU</td><td>MAIPU 710</td><td>FLORIDA OESTE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA EL 32 DE LA BUENA SUERTE</td><td>SAN MARTIN 2518</td><td>FLORIDA OESTE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRUBRO LAS CHICAS</td><td>VALLE GRANDE 360</td><td>FLORIDA SUR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRUBRO ESI</td><td>BV. CARLOS CORTELEZZI Y GUEMES</td><td>FORTIN OLAVARRIA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>GENESIS</td><td>CANDIDO MORENO 988</td><td>FRANCISCO ALVAREZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DIETETICA FLOR DE POROTO</td><td>SEMANA DE MAYO 1519</td><td>FRANCISCO ALVAREZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA EL ENAMORADO DE LA SUERTE 2</td><td>FRUCTUOSO DIAZ 793</td><td>GARIN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>COFIN</td><td>GOLFERS GOLF CLUB 2911 PISO 1 LOC 22</td><td>GARIN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ANDREA TURISMO 2</td><td>NECOCHEA G. C. 3158</td><td>GARIN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS GARIN</td><td>PADRE PERNA 974</td><td>GARIN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS FERNANDEZ GARIN</td><td>PTE PERON 245</td><td>GARIN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA AGENCIA BELEN 1</td><td>SAN JAVIER 1308</td><td>GARIN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MIRAVERD CRS</td><td>DIAGONAL FORTUNATO DE LA PLAZA 1479</td><td>GENERAL ALVARADO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ANTONELA VICENTEL SEGUROS</td><td>ARISTOBULO DEL VALLE 1040</td><td>GENERAL ALVEAR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EL PORTAL INFORMATICA</td><td>AV ALVEAR 208</td><td>GENERAL ARENALES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>REGALERIA BELLON</td><td>MOSCONI 56</td><td>GENERAL ARENALES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LO DE MINU</td><td>25 DE MAYO 12</td><td>GENERAL BELGRANO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EQUALIA</td><td>SAAVEDRA 315</td><td>GENERAL BELGRANO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EL LECHON SONRIENTE</td><td>BELGRANO 558</td><td>GENERAL CONESA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>HACKER S</td><td>MITRE 628</td><td>GENERAL LAMADRID</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MERCADITO LAMADRID</td><td>RODRIGUEZ PENA 259</td><td>GENERAL LAMADRID</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO LO DE JUAN LAS HERAS II</td><td>AV CHIOCCONI 310</td><td>GENERAL LAS HERAS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO LO DE JUAN LAS HERAS</td><td>AV. VILLAMAYOR 676</td><td>GENERAL LAS HERAS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS SAN CRISTOBAL LAS HERAS</td><td>H PORDOMINGO 172</td><td>GENERAL LAS HERAS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO LA NOCHE</td><td>RIVADAVIA 165</td><td>GENERAL LAS HERAS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS RECAITE LAS HERAS</td><td>VILLAMAYOR 495</td><td>GENERAL LAS HERAS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO RICCI II</td><td>AV. BUENOS AIRES 693</td><td>GENERAL MADARIAGA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRUBRO LO DE PAVON</td><td>CALLE 8 NRO 2264</td><td>GENERAL MADARIAGA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO RICCI 1</td><td>M. GUERRERO 1858</td><td>GENERAL MADARIAGA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PF GROUP 6</td><td>MARTINEZ GUERRERO 1599</td><td>GENERAL MADARIAGA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO LA CENTRAL</td><td>SARMIENTO 928</td><td>GENERAL MADARIAGA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DRUGSTORE O BRIEN PLAZA</td><td>AV. O BRIEN Y 25 DE MAYO</td><td>GENERAL O BRIEN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERVICIOS PATAGONIA 1</td><td>ARTIGAS 3000 LOCAL 33 C.COM. LOS LIRIOS</td><td>GENERAL PACHECO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS MAY PACHECO</td><td>AV DE LOS CONSTITUYENTES 240</td><td>GENERAL PACHECO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>RED ASESORES SEGUROS</td><td>AV. CONSTITUYENTES 1006</td><td>GENERAL PACHECO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PAGO ACA PACHECO</td><td>AV. DE LOS CONSTITUYENTES 533</td><td>GENERAL PACHECO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MOTO GIMENEZ</td><td>AV. DE LOS CONSTITUYENTES 719</td><td>GENERAL PACHECO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ATM PACHECO</td><td>CONSTITUYENTES 456</td><td>GENERAL PACHECO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS GENERALES DE SOUTO Y ASOC.</td><td>HIPOLITO YRIGOYEN 2051</td><td>GENERAL PACHECO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>VEA PACHECO</td><td>RUTA 197 KM 32,5 Y J M GRAL PAZ</td><td>GENERAL PACHECO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA JABONERIA GRAL RODRIGUEZ</td><td>BERNARDO DE IRIGOYEN 1100</td><td>GENERAL RODRIGUEZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO AVENIDA</td><td>BERNARDO DE IRIGOYEN 638</td><td>GENERAL RODRIGUEZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRRUBRO MR</td><td>INTENDENTE COLOBRARO (RUTA 5) 1689</td><td>GENERAL RODRIGUEZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA TOTUS TUS</td><td>RIVADAVIA 1005</td><td>GENERAL VILLEGAS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DESPENSA ROMA</td><td>SANTA LUCIA 445</td><td>GENERAL VILLEGAS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA SAN CLEMENTE</td><td>BUSTAMANTE 1073</td><td>GERLI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA BUSTAMANTE</td><td>BUSTAMANTE 821</td><td>GERLI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EPN POLIRUBRO VIVANI</td><td>SARMIENTO 881</td><td>GERLI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MINIMERCADO KATAPUM</td><td>HEREDIA 1826</td><td>GERLI - PDO. AVELLANEDA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AYB SEGUROS IV</td><td>EL PLATA 2290</td><td>GLEW</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ALLA Y ACA VIAJES</td><td>SARMIENTO 110</td><td>GLEW</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRUBRO AYE</td><td>SARMIENTO 510 L1</td><td>GLEW</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOS CHICOS</td><td>TENIENTE CLARK 599</td><td>GLEW</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DELEGACION MUNICIPAL GOBERNADOR UGARTE</td><td>BELGRANO 350</td><td>GOBERNADOR UGARTE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CIBERIRONMAN</td><td>ATALCO 5656</td><td>GONZALEZ CATAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO AVENIDA</td><td>AV. SIMON PEREZ 4925</td><td>GONZALEZ CATAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EBENEZEL</td><td>BARRIENTOS 5701</td><td>GONZALEZ CATAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CATAN</td><td>BRIG. J.M. DE ROSAS 14457</td><td>GONZALEZ CATAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRRUBRO CARLA</td><td>CARAFA 6747</td><td>GONZALEZ CATAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AYB SEGUROS II</td><td>CARAFFA 7296</td><td>GONZALEZ CATAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA RUBIA</td><td>CAYENA 6472</td><td>GONZALEZ CATAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>NSA  AGENCIA A Y L</td><td>INT PEDRO RUSSO 4424</td><td>GONZALEZ CATAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CHE QUYQUYHO</td><td>INT. RUSSO 1587</td><td>GONZALEZ CATAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CAP G CATAN</td><td>J M MORENO 202</td><td>GONZALEZ CATAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO LARRE</td><td>JOSE LEON LARRE 679</td><td>GONZALEZ CATAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO RUTA</td><td>JOSE MARIA MORENO 575</td><td>GONZALEZ CATAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO PUENTE</td><td>JUAN MANUEL DE ROSAS 13908</td><td>GONZALEZ CATAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA GARDENA</td><td>LA GARDENA 7096</td><td>GONZALEZ CATAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO VIRREY</td><td>LARRE 608</td><td>GONZALEZ CATAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AYB SEGUROS</td><td>MATIENZO 5839</td><td>GONZALEZ CATAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SUEÑO MAGICO</td><td>PATAGONIA 793</td><td>GONZALEZ CATAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MEDI-VAN</td><td>POSAMAY 524</td><td>GONZALEZ CATAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DANILA</td><td>ZELADA 6630</td><td>GONZALEZ CATAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>STAR GRAND BOURG</td><td>AV EVA DUARTE DE PERON 1104</td><td>GRAND BOURG</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA AGENCIA GB SESQUINCENTENARIO</td><td>AV SESQUINCENTENARIO 2201</td><td>GRAND BOURG</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA OTA</td><td>AV. EVA PERON 1301</td><td>GRAND BOURG</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PUNTO DE ENCUENTRO 2</td><td>CURABROCHERO 806</td><td>GRAND BOURG</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>BER SEGUROS I</td><td>EL CALLAO 1277</td><td>GRAND BOURG</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA REY CALLAO</td><td>EL CALLAO 2492</td><td>GRAND BOURG</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA RIVERA</td><td>F. SEGUI 1648</td><td>GRAND BOURG</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERVICIOS GALERIA GRAND BOURG</td><td>FRANCISCO BEIRO 1492</td><td>GRAND BOURG</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA AGENCIA GB BEIRO</td><td>FRANCISCO BEIRO 1749</td><td>GRAND BOURG</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>HECTOR</td><td>O BRIEN 920</td><td>GRAND BOURG</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA COVIMAQ</td><td>OLIVOS 2397</td><td>GRAND BOURG</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA AGENCIA GB LOS PATOS</td><td>PASO DE LOS PATOS 7</td><td>GRAND BOURG</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA AGENCIA GB SAN MARTIN</td><td>SAN MARTIN 890</td><td>GRAND BOURG</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MUNDO GRAFICO</td><td>AV LURO 4249</td><td>GREGORIO DE LAFERRERE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DESPENSA NATALIA</td><td>CAZON 5810</td><td>GREGORIO DE LAFERRERE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EXPRESS TELEFONOS PUBLICOS</td><td>CNEL GARZON 3067</td><td>GREGORIO DE LAFERRERE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOS 7 COLORES II</td><td>D VINCI 4420</td><td>GREGORIO DE LAFERRERE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CENTRO BELKY ACOSTA</td><td>GRAL ROJO 2659</td><td>GREGORIO DE LAFERRERE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DIAMANT HOGAR</td><td>GRAL. ROJO 3155</td><td>GREGORIO DE LAFERRERE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LGM SERVICIOS 1</td><td>JM DE ROSAS 10863</td><td>GREGORIO DE LAFERRERE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PF MARTINEZ</td><td>LURO 5410</td><td>GREGORIO DE LAFERRERE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO GALERIA</td><td>PIEDRABUENA 6176</td><td>GREGORIO DE LAFERRERE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO ESTACION</td><td>PIEDRABUENA 6186</td><td>GREGORIO DE LAFERRERE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SILMAR</td><td>S. SOSA 5599</td><td>GREGORIO DE LAFERRERE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DIAMANT HOGAR II</td><td>SOBERANIA NACIONAL 3125</td><td>GREGORIO DE LAFERRERE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CASA NB</td><td>SOLDADO SOSA 4903/05</td><td>GREGORIO DE LAFERRERE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>WAM SOLUCIONES</td><td>SOLDADO SOSA 5009</td><td>GREGORIO DE LAFERRERE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>HELADERIA Y PIZZERIA RENZO</td><td>SAN MARTIN Y BELGRANO</td><td>GUAMINI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS GUERNICA</td><td>AV HIPOLITO YRIGOYEN 24651 (RUTA 210)</td><td>GUERNICA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KATY</td><td>CALLE 111 655</td><td>GUERNICA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SUPERMERCADOS DADO II</td><td>EVA PERON 4</td><td>GUERNICA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SUPERMERCADO DADO</td><td>JAURETCHE 520</td><td>GUERNICA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ESTACION DE SERVICIO HUDSON</td><td>AV. OTTO BERMBERG 5300</td><td>GUILLERMO E HUDSON</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>JUAREZ CONFORT HUDSON</td><td>CALLE 53 NRO  2896</td><td>GUILLERMO E HUDSON</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LIBRAS S KIOSCO Y SERVICIOS</td><td>CALLE 55 NRO 4796</td><td>GUILLERMO E HUDSON</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AUTOSERVICIO BETY</td><td>CALLE 59 NRO 6478</td><td>GUILLERMO E HUDSON</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DIAGRAMAS HAEDO</td><td>AV RIVADAVIA 16180 LOCAL 14</td><td>HAEDO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SHELL LA CURVA</td><td>AV. RIVADAVIA 16028</td><td>HAEDO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO LG3</td><td>FASSOLA 846</td><td>HAEDO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ATM HAEDO</td><td>PTE PERON 1180</td><td>HAEDO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EL PROGRESO</td><td>FLORIDA 692</td><td>HENDERSON</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DVD CLUB</td><td>SAN MARTIN 355</td><td>HILARIO ASCASUBI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>TELEFONICA OFICINA COMERCIAL</td><td>CALLE 56 NRO 3118</td><td>HOSPITAL NECOCHEA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EL PORTAL</td><td>CALLE 27 NRO 910</td><td>HUANGUELEN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA BARRIENTOS</td><td>ACOYTE 3312</td><td>HURLINGHAM</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>VEA HURLINGHAM</td><td>AV. GOBERNADOR VERGARA 3275</td><td>HURLINGHAM</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FERRETERIA EL COSITO</td><td>AV. VERGARA 4124</td><td>HURLINGHAM</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO Y CYBER ROSITA</td><td>GENERAL CONRADO VILLEGAS 2332</td><td>HURLINGHAM</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERVICIOS DEL BARRIO</td><td>GURRUCHAGA 2462 LOCAL 2</td><td>HURLINGHAM</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EL TUCU</td><td>ISABEL DEL MAESTRO 3495</td><td>HURLINGHAM</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA MOSCA LOCA II</td><td>MARQUES DE AVILEZ 1098</td><td>HURLINGHAM</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERVICIOS HINDING</td><td>BARTOLOME MITRE 446</td><td>INDIO RICO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS SOURDEAUX</td><td>CNEL WINTER 4419</td><td>INGENIERO ADOLFO SOURDEAU</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRUBRO YANI</td><td>1282 EX 21 NRO 482</td><td>INGENIERO ALLAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO BUSTOS</td><td>BUSTOS 1822</td><td>INGENIERO BUDGE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ADMINISTRACION ROCHA II</td><td>EPECUEN 857</td><td>INGENIERO BUDGE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EL REY</td><td>RECONDO 1135</td><td>INGENIERO BUDGE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PAGOS DEL MERCADO MASCHWITZ</td><td>COLECTORA ESTE 2100/2147</td><td>INGENIERO MASCHWITZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA-AGENCIA MASCHWITZ</td><td>COLECTORA OESTE 1172 LOCAL 3</td><td>INGENIERO MASCHWITZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA BOUTIQUE KIOSCO</td><td>AV. SAN MARTIN 3657</td><td>INGENIERO WHITE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LGM SERVICIOS VI</td><td>A J M DE ROSAS 8935</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MICHELO</td><td>ALICANTE 2326</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MARQUEZ ATALAYA</td><td>AV CRISTIANIA 1678</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA ARRANCA PARAGOLPES VIII</td><td>AV CRISTIANIA 1896</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FLOPY III</td><td>AV POLLEDO 288</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CONFORT ALEX</td><td>AV. CARLOS CASARES 2447</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PAGOS CROVARA</td><td>AV. CROVARA 5891</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PAGOS CASANOVA</td><td>AV. J M DE ROSAS 8585</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>COMERCIO DE MARINA</td><td>AV. MARCONI 6117</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA ARRANCA PARAGOLPES V</td><td>AV.MARCONI 4081</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO ATALAYA</td><td>CRISTIANIA 1651</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO CRISTIANIA</td><td>CRISTIANIA 4649</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO LOS PIBES</td><td>HABANA 5795</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PAGOS AGUS</td><td>J RUCCI 4635</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>N Y G HOSPITAL</td><td>J.M. DE ROSAS 5975</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>GRUPO NISTAL</td><td>JM DE ROSAS 6716</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA ARRANCA PARAGOLPES</td><td>LAVALLOL 1193</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAYRA AMARILLA</td><td>LAVALLOL 663</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LAS REJAS</td><td>MARCONI 4866</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LUCIANO</td><td>PERIBEBUY 5545</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO FLOPY</td><td>POLLEDO 398</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EPN MIS AMORES</td><td>REP DE PORTUGAL 2838</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA ARRANCA PARAGOLPES VII</td><td>REP DE PORTUGAL 3014</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>TRIPLE B</td><td>REP. DE PORTUGAL 2913</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA PAGOS NACHO</td><td>WASHINGTON 5541</td><td>ISIDRO CASANOVA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EASY ITUZAINGO</td><td>AV PTE PERON 9509</td><td>ITUZAINGO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>COTILLON JAIA</td><td>AV. RATTI 1033</td><td>ITUZAINGO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ORGANIZACION TROIANO</td><td>AV. RATTI 1622</td><td>ITUZAINGO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MN ITUZAINGO</td><td>AV. RATTI 778</td><td>ITUZAINGO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ICA 24 ROCA</td><td>AVENIDA ROCA 2197</td><td>ITUZAINGO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>GESTORIA VALVO Y ASOCIADOS</td><td>BRANDSEN 1713</td><td>ITUZAINGO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PAGOS LAUTARO</td><td>JUNCAL 190</td><td>ITUZAINGO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO JUNCAL</td><td>JUNCAL 495</td><td>ITUZAINGO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LIBRERIA LO DE SILMI</td><td>LAVALLEJA 464</td><td>ITUZAINGO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MN UDAONDO</td><td>MARTIN FIERRO 4846</td><td>ITUZAINGO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ICA 24 MARTIN FIERRO</td><td>MARTIN FIERRO Y CASTRO LOCAL 5</td><td>ITUZAINGO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>COOPIC</td><td>RANGUGNI 2702</td><td>ITUZAINGO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>M E BANOS Y COCINAS</td><td>SOLER 394</td><td>ITUZAINGO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>BAIONA</td><td>ZUFRIATEGUI 980</td><td>ITUZAINGO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO DE URIEL</td><td>DIAGONAL 6  N 75</td><td>JOAQUIN GORINA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO ALFA</td><td>CUARTEL IX S/N</td><td>JOSE A GUISASOLA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ELECTRICIDAD Y PLOMERIA JOSE C PAZ</td><td>AV CROACIA 460</td><td>JOSE CLEMENTE PAZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CAS GRI</td><td>AV GASPAR CAMPOS 5305</td><td>JOSE CLEMENTE PAZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA AGENCIA MAGUS</td><td>AV POTOSI 4749</td><td>JOSE CLEMENTE PAZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MULTIVENTAS JU I</td><td>AV. H. YRIGOYEN 2550 LOC 11</td><td>JOSE CLEMENTE PAZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA TIRONE</td><td>AV. H.YRIGOYEN 2961</td><td>JOSE CLEMENTE PAZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA EL REY DE LA SUERTE 19</td><td>AV. PTE PERON 4409</td><td>JOSE CLEMENTE PAZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS ZEPPE</td><td>AV. PTE PERON 4508</td><td>JOSE CLEMENTE PAZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS DRAGO FRINO</td><td>BRUGHETTI 1925</td><td>JOSE CLEMENTE PAZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA CROACIA</td><td>CROACIA 1854</td><td>JOSE CLEMENTE PAZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CENTRO SERVICIO JOSE C PAZ</td><td>GELLY Y OBES 4896</td><td>JOSE CLEMENTE PAZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA EL REY DE LA SUERTE 17</td><td>H. YRIGOYEN 292</td><td>JOSE CLEMENTE PAZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MULTIVENTAS  JU II</td><td>H. YRIGOYEN 3700</td><td>JOSE CLEMENTE PAZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DESCONECTOUR PAGOS 1</td><td>HIPOLITO YRIGOYEN 1599</td><td>JOSE CLEMENTE PAZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CANDE FULLL III</td><td>JUAN CRUZ VARELA 3900</td><td>JOSE CLEMENTE PAZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LIBRERIA PRINCESA BONITA</td><td>MUNOZ 4301</td><td>JOSE CLEMENTE PAZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA EL REY DE LA SUERTE 5</td><td>PINERO 977</td><td>JOSE CLEMENTE PAZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PEREZ ASOC CIUDADELA</td><td>AV. GRAL PAZ 7401</td><td>JOSE INGENIEROS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA REY SUAREZ 2</td><td>ALCORTA 7400</td><td>JOSE LEON SUAREZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EPN TIERRA DE SABORES</td><td>DIAGONAL 69 7189</td><td>JOSE LEON SUAREZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA SUAREZ</td><td>JUAN  MANUEL DE ROSAS 2591</td><td>JOSE LEON SUAREZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MALU</td><td>ROCA 1600</td><td>JOSE LEON SUAREZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA BUENA ONDA</td><td>SAN VICENTE 2139</td><td>JOSE LEON SUAREZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA AGENCIA SUAREZ SPIRITO</td><td>SOTO Y CALVO 4201</td><td>JOSE LEON SUAREZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FERRETERIA EL GLOBO</td><td>CANALE 3223</td><td>JOSE MARMOL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PAGOS MARMOL</td><td>DORREGO 598</td><td>JOSE MARMOL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DAR</td><td>MITRE 4429</td><td>JOSE MARMOL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO MALE</td><td>CALLE 14 98</td><td>JUAN A PRADERE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MINI STORE MAXI KIOSCO</td><td>BELGRANO 81</td><td>JUAN BAUTISTA ALBERDI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LIBRERIA INNOVA</td><td>JUAN BAUTISTA ALBERDI 345</td><td>JUAN COUSTE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA CASA CERVANTES</td><td>CALLE 35 NRO 1354</td><td>JUAN N FERNANDEZ</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ALMACEN SANLUI</td><td>ALEMANIA 326</td><td>JUNIN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>VIDEO CHARLES</td><td>ALVAREZ RODRIGUEZ 105</td><td>JUNIN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ROPA INFORMAL LOLY</td><td>AV RIVADAVIA 1252</td><td>JUNIN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>GARROTE Y ASOCIADOS</td><td>GRAL PAZ 361</td><td>JUNIN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ALMACEN DON ATILIO</td><td>INTENDENTE SOLANA 198</td><td>JUNIN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA LOTERIA EL TIO OTTO</td><td>POSADAS 99</td><td>JUNIN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>HOSSANNA CASA Y JARDIN</td><td>PUEYRREDON 5018</td><td>KILOMETRO 61</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ECO 7</td><td>RIVADAVIA 840</td><td>KILOMETRO 61</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ULLA SEGUROS</td><td>TUCUMAN 15</td><td>KILOMETRO 61</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>YPF ANGELI</td><td>CALLE 26 NRO 750</td><td>LA DULCE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO LA CASITA DE MADERA</td><td>FRAY LUIS BELTRAN 442</td><td>LA EMILIA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CHI QUI MAXIKIOSCO</td><td>LEOLEGARIO CORDOVA 1121</td><td>LA EMILIA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO ARA</td><td>MAIPU 3726</td><td>LA LUCILA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA AGENCIA VIA NORTE LA LUCILA</td><td>RAWSON 3806</td><td>LA LUCILA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA EL REY DE LA SUERTE 2</td><td>SAN LORENZO 3802</td><td>LA LUCILA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ACME</td><td>CALLE 7 1388</td><td>LA PERLA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EPN LA SONADORA II</td><td>DIAGONAL 73 2644</td><td>LA PERLA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PUNTO M</td><td>137 N 1420</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO SANTINO</td><td>43 404</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>VEA LA PLATA II AGUS</td><td>45 N 377</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CANAI</td><td>60 N 1910</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DON OSCAR</td><td>66 N 197</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CUBA RELAX ESTETICA</td><td>9 N 413</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA AGENCIA TITO</td><td>AV 60 NRO 727</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EL KIOSCO</td><td>AV 7 N 41</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA EL PRINCIPIANTE</td><td>AV. 7 N 2479</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA ISIDORO</td><td>AV. 7 NRO 1158</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGUS 4</td><td>AV.44 NRO 371</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>OFICINA 31</td><td>AVENIDA 31 NRO.328</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EPN EL KIOSCO II</td><td>AVENIDA 7 N 55</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MMS BROKERS</td><td>CALLE 11 NRO 468</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>M Y F</td><td>CALLE 140 NRO 1499</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EPN MULTISERVICIOS HUGO</td><td>CALLE 143 NRO 1563</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>OFICINA 38</td><td>CALLE 18 N 308</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CREDNOW CENTRAL</td><td>CALLE 44 N 329</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO BUENOS TIEMPOS</td><td>CALLE 5 NRO 1550</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGUS 2</td><td>CALLE 51 N 679</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>NO STOP 3</td><td>CALLE 6 Nro  778</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MUNDO TECNO</td><td>CALLE 61 NRO 1440</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRUBRO CHIMANGO</td><td>CALLE 62 NRO 357</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AUTOSERVICIO ISA</td><td>CALLE 8 1327</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOS AMIGOS</td><td>DIAGONAL 73 N 3267</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DRUGSTORE AGUS 3</td><td>DIAGONAL 74 N 1554</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DISCO LA PLATA III AGUS</td><td>DIAGONAL 79 N 962</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DRUGSTORE AGUS</td><td>PLAZA ITALIA 10/12</td><td>LA PLATA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EL NUMERAZO</td><td>JULIAN ALVAREZ 2695</td><td>LA REJA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FORRAJERIA NORMA</td><td>RUBEN DARIO 340</td><td>LA REJA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PUGLIESE SEGUROS</td><td>SARMIENTO E H. YRIGOYEN</td><td>LA VIOLETA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>P24 LANUS</td><td>25 DE MAYO 499</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LIBRERIA IMPEL</td><td>25 MAYO 1571</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ACCESORIOS CELULARES ZONA MOVIL</td><td>29 DE SEPTIEMBRE 1992 LOCAL 7Y8</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA EL MAGO</td><td>29 SEPTEIMBRE 2014</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO EMANUEL II</td><td>9 DE JULIO 1514</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CYCLESEG LANUS ESTE</td><td>9 DE JULIO 2198</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>GRAN CRED II</td><td>9 DE JULIO N  1256</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>GRAN CRED III</td><td>ANATOLE FRANCE 1968</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO MANDALA</td><td>ARISTOBULO DEL VALLE 123</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOPBA AGENCIA DON TOTO</td><td>AV ROSALES 2056</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PLAZA VEA LANUS</td><td>AV. HIPOLITO YRIGOYEN 4174</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOTBA AGENCIA ESCORPIO</td><td>AV. HIPOLITO YRYGOYEN 3995</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA MARINA II</td><td>AV. RIVADAVIA 1900</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>BOSTON CRED LANUS</td><td>AV. SAN MARTIN  4186</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>STOPCAR LANUS</td><td>AV. YRIGOYEN 5199</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MUEBLES LIBERTAD I</td><td>BALCARCE 1274</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA MONES</td><td>BALCARCE 802</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERVICIOS VALEN</td><td>BERON DE ASTRADA 4390</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SHELL BASAVILBASO</td><td>CNO. GRAL BELGRANO 1587</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO LA MONY</td><td>COLOMBIA 1238</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO MANIA II</td><td>CORDOBA 950</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO EL TOPO QUEMERO</td><td>CORONEL SAYOS 1221</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CYBER WORLD NET</td><td>DEHEZA 1023</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CYBER CHUCHO III</td><td>EVA PERON 4335</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CENTRAL SERVICIOS LANUS</td><td>HIPOLITO YRIGOYEN 4622 PISO PB</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA MI SUENO</td><td>JOSE M MORENO 3699</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LIBRERIA QUINQUELA</td><td>LLAVALLOL 174</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AQUI ENERGY</td><td>MADARIAGA 898</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MUEBLES LIBERTAD II</td><td>MAGALLANES 3102</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS ELVEN</td><td>MARCO AVELLANEDA 3199</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA DE LA NUEVA ESQUINA</td><td>MAXIMO PAZ 1084</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO LA COLO</td><td>MAXIMO PAZ 396</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO DIANA</td><td>MAXIMO PAZ 790</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AUTOSERVICIO AGOSTINELLI</td><td>MOLINERO 1676</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERVICIOS LUZ CARAZA</td><td>MURATURE 4107</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EL MAGO III</td><td>O´HIGGINS 2064</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO MANOLITO</td><td>PINEYRO 179-183</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA MARINA V</td><td>R.E. SAN MARTIN 1492</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA MIGLIORE</td><td>TAGLE 3902</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO VIAMONTE</td><td>VIAMONTE 1714</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRUBRO LOS RODRIGUEZ</td><td>VIAMONTE 2629</td><td>LANUS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MULTIKIOSCO CG</td><td>AV SAN MARTIN 626</td><td>LAPRIDA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>POLIRUBRO DIA Y NOCHE</td><td>AV.PEDRO PEREYRA 1380</td><td>LAPRIDA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO RPL2</td><td>MITRE 1214</td><td>LAPRIDA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LAPRIPAGO</td><td>SANTAMARINA 1179</td><td>LAPRIDA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>D TALLES</td><td>9 DE JULIO 330</td><td>LAS FLORES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERCOB LAS FLORES</td><td>AV SARMIENTO 379</td><td>LAS FLORES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ACTUAL SUPERMERCADOS I</td><td>AVENIDA RIVADAVIA 513</td><td>LAS FLORES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA ESQUINA</td><td>ROSARIO VERA 597</td><td>LAS FLORES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LIBRERIA PEGAZZO</td><td>SARGENTO CABRAL 74</td><td>LAS MALVINAS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>TELESERVICIOS</td><td>ROLDAN 199</td><td>LEANDRO N ALEM</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CASA PAEZ</td><td>AV. COBO 132</td><td>LEZAMA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS SANCHEZ</td><td>AV JULIAN CASTRO 1022</td><td>LIBERTAD</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA ANELE</td><td>AV. EVA PERON 3050</td><td>LIBERTAD</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FARMACIA FARMANELE</td><td>EVA PERON 2399</td><td>LIBERTAD</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ASEGURAR LIMA</td><td>CALLE 9 Y 14</td><td>LIMA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO LOLA</td><td>BELGRANO 143 LOCAL 8</td><td>LINCOLN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERVICIOS DE COMUNICACIONES</td><td>MITRE 159</td><td>LINCOLN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FERRETERIA ANTARTIDA</td><td>ANTARTIDA ARGENTINA 1755</td><td>LLAVALLOL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PAGOS ALMA Y PIA</td><td>DOYHENARD 110 EX 305</td><td>LLAVALLOL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO HUGO</td><td>LUZURIAGA 495</td><td>LLAVALLOL</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EPN LIBRERIA YAMAL</td><td>ALBERDI 45</td><td>LOBERIA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERVICIOS DIVER TOUR S.A. LOBERIA</td><td>MITRE 33</td><td>LOBERIA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO ELI-FER</td><td>BUENOS AIRES 781</td><td>LOBOS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MINIMERCADO MK.</td><td>SALGADO 515</td><td>LOBOS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>VALDERRAMA SEGUROS</td><td>SALGADO ESTE 377</td><td>LOBOS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SI PUDE PAGOS</td><td>GENERAL LAVALLE 6409</td><td>LOMA HERMOSA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERVICIOS LOMA HERMOSA</td><td>LAS GARDENIAS 6041</td><td>LOMA HERMOSA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>B.B.C LOCUTORIO</td><td>LOS PINARES 4898</td><td>LOMA HERMOSA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO LOMA HERMOSA</td><td>LOS PINARES 5301</td><td>LOMA HERMOSA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AGENCIA LOMA HERMOSA</td><td>RUTA 8 NRO 9506</td><td>LOMA HERMOSA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LIBRERIA PARTY FUN</td><td>LOS CERROS 1141</td><td>LOMA VERDE</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOMAS SERVICIOS</td><td>ACEVEDO 57</td><td>LOMAS DE ZAMORA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ALEM 122</td><td>ALEM 122</td><td>LOMAS DE ZAMORA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FALUCHO V</td><td>ALEM 1386</td><td>LOMAS DE ZAMORA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO DAI</td><td>AV. ALSINA 1993</td><td>LOMAS DE ZAMORA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ALMANZA MAXIKIOSCO</td><td>AZAMOR 1596</td><td>LOMAS DE ZAMORA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PAGOS M Y D</td><td>BALCARCE 274</td><td>LOMAS DE ZAMORA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PAGOS LOMAS II</td><td>BOEDO 236</td><td>LOMAS DE ZAMORA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>BOSTONCRED LOMAS</td><td>BOEDO 593</td><td>LOMAS DE ZAMORA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CANDE FULL IV</td><td>CALLE 101 CASA 659 MZA. 14</td><td>LOMAS DE ZAMORA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DONA HILDA II</td><td>CLAUDIO DE ALAS 2177</td><td>LOMAS DE ZAMORA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERVICIOS COLOMBRES</td><td>COLOMBRES 1499</td><td>LOMAS DE ZAMORA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>NSA FANTASIA SYSTEM</td><td>EPECUEN 760</td><td>LOMAS DE ZAMORA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>REPARACIONES PC FALUCHO</td><td>FALUCHO 156</td><td>LOMAS DE ZAMORA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>P24 LOMAS DE ZAMORA</td><td>JOSE IGNACIO GORRITI 387</td><td>LOMAS DE ZAMORA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>DRUGSTORE CARAMELITO S</td><td>JOSE IGNACIO GORRITI 417</td><td>LOMAS DE ZAMORA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO LAS HERMANAS 2</td><td>JUAN DOMINGO PERON 878 LOC 1</td><td>LOMAS DE ZAMORA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CYCLESEG LOMAS</td><td>LAPRIDA 630</td><td>LOMAS DE ZAMORA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ICA 24 LOMAS DE ZAMORA</td><td>SAAVEDRA 535</td><td>LOMAS DE ZAMORA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO LOS HERMANOS</td><td>SANTA FE 288</td><td>LOMAS DE ZAMORA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>FALUCHO II</td><td>VIRGEN DE ITATI N 2106</td><td>LOMAS DE ZAMORA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PINTURERIA UNIVERSAL</td><td>AV MOSCONI 1550</td><td>LOMAS DEL MIRADOR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOCUTORIO MIRADOR</td><td>AV. J.M.ROSAS 439</td><td>LOMAS DEL MIRADOR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>4 DE MARZO III</td><td>AV. JUAN MANUEL DE ROSAS 1079</td><td>LOMAS DEL MIRADOR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO LO DE LALO II</td><td>AV. SAN MARTIN 2409</td><td>LOMAS DEL MIRADOR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>TRIANGULO DE FATIMA</td><td>G VILLEGAS 762</td><td>LOMAS DEL MIRADOR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ORGANIZACION TROIANO SAN MARTIN</td><td>SAN MARTIN 2887</td><td>LOMAS DEL MIRADOR</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>PERFUMERIA NICO</td><td>AV ESPORA 5395</td><td>LONGCHAMPS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LA ESTACION</td><td>BELGRANO 1286</td><td>LONGCHAMPS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERVIRED ANELEY</td><td>BELGRANO 1585</td><td>LONGCHAMPS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ORGANIZACION RAM</td><td>GRAL SAN MARTIN 625</td><td>LONGCHAMPS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>GRUPO AMPRAS</td><td>HENRI BREGI 996</td><td>LONGCHAMPS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LODETOMAS</td><td>25 DE MAYO 85</td><td>LOS CARDALES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO LIBRERIA 389</td><td>BELGRANO 389</td><td>LOS CARDALES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SERVICIOS POLVORINES</td><td>SAN MARTIN 2683</td><td>LOS POLVORINES</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SAN CRISTOBAL SEGUROS</td><td>ELECTO URQUIZO 55</td><td>LOS TOLDOS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MUNDO LIMPIO</td><td>LINIERS 1414</td><td>LOS TOLDOS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LIBRERIA CLEMENTE</td><td>SAN MARTIN 1171</td><td>LOS TOLDOS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ORGANIZACION ROJAS LUIS GUILLON</td><td>BOULEVARD BS AS 1880</td><td>LUIS GUILLON</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ICA 24 BRUZZONE</td><td>BRUZZONE 1611</td><td>LUIS GUILLON</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AXION DISTRIBUIDORA SUR SA</td><td>CAMINO DE CINTURA 1410</td><td>LUIS GUILLON</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LUTAC</td><td>LUCIANO VALETTE Y RAFAEL DE SANZIO</td><td>LUIS GUILLON</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>LOS LUISES</td><td>PROFESOR A MARXER 1404</td><td>LUIS GUILLON</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ALMACEN SAN MARTIN</td><td>SAN MARTIN 1799</td><td>LUIS GUILLON</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>VEA LUJAN</td><td>25 DE MAYO 260</td><td>LUJAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>OPEN 24 LUJAN</td><td>9 DE JULIO 786</td><td>LUJAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS MAPRE LUJAN</td><td>AV. ESPANA 826</td><td>LUJAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>ASOC COMERCIANTES DE LUJAN</td><td>BME MITRE 350</td><td>LUJAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>KIOSCO PABLIN</td><td>BME MITRE 488</td><td>LUJAN</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CYBER MAX I</td><td>BRENAN 1001</td><td>MAGDALENA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>AUTOSERVICIO ARUBA</td><td>PATRICIO BRENAN Y FRENCH</td><td>MAGDALENA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>INDUMENTARIA DI QUIEN</td><td>SAN MARTIN 1011</td><td>MAGDALENA</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>CASA ROYER</td><td>BELGRANO 328</td><td>MAIPU</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>MAXIKIOSCO CHOCOLATE</td><td>HIPOLITO YRIGOYEN 131</td><td>MAIPU</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>GUATAMBU 266</td><td>MALVINAS ARGENTINAS</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>EL REY DE LA SUERTE 12</td><td>H. YRIGOYEN 720</td><td>MANUEL ALBERTI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>COTILLON ALBERTI</td><td>JOCKEY CLUB 2563</td><td>MANUEL ALBERTI</td><td>BUENOS AIRES</td></tr>
+ <tr><td>PF</td><td>SEGUROS FERNANDEZ 2</td><td>RUTA 26 2493</td><td>MAQUINISTA F SAVIO</td><td>BUENOS AIRES</td></tr>
+ <tr><td>RP</td><td>DORSO SELVA CARINA</td><td>AVDA GALICIA 221  </td><td>AVELLANEDA</td><td>-</td></tr>
+ <tr><td>RP</td><td>FERNANDEZ LEANDRO EZEQUIEL</td><td>GDOR DR VALENTIN VERGARA 1543 0 </td><td>BANFIELD</td><td>-</td></tr>
+ <tr><td>RP</td><td>CAMPORRO MARIA VERONICA</td><td>MITRE 539  </td><td>BELEN DE ESCOBAR</td><td>-</td></tr>
+ <tr><td>RP</td><td>GURFINKEL ALEJANDRA L.</td><td>COLON 799  1</td><td>BELEN DE ESCOBAR</td><td>-</td></tr>
+ <tr><td>RP</td><td>RATTO RODRIGO GUILLERMO2</td><td>AVDA GRAL CARLOS MARIA DE ALVEAR 2319  </td><td>BENAVIDEZ</td><td>-</td></tr>
+ <tr><td>RP</td><td>Rapi Lamadrid</td><td>AVDA LAMADRID 361  </td><td>BERNAL ESTE</td><td>-</td></tr>
+ <tr><td>RP</td><td>SALVATIERRA NANCY SOLEDAD </td><td>PABLO PODESTA 1624  </td><td>BOSQUES</td><td>-</td></tr>
+ <tr><td>RP</td><td>SOLIS SANTIAGO ABEL</td><td>ROCA 1187 0 </td><td>BURZACO</td><td>-</td></tr>
+ <tr><td>RP</td><td>SOLIS SANTIAGO ABEL</td><td>AVDA CNEL DE MARINA TOMAS ESPORA 3310  </td><td>BURZACO</td><td>-</td></tr>
+ <tr><td>RP</td><td>LEYRIA LUCIANO ADRIAN</td><td>AV TORCUATO 4753  </td><td>CASEROS</td><td>-</td></tr>
+ <tr><td>RP</td><td>FACCIOLO CARLOS ANTONIO</td><td>AVDA BERNARDINO RIVADAVIA 3934  </td><td>ALMAGRO</td><td>CIUDAD AUTONOMA BUENOS AIRES</td></tr>
+ <tr><td>RP</td><td>FACCIOLO CARLOS ANTONIO</td><td>PBTO DR MARIANO SANCHEZ DE LORIA 184  </td><td>BALVANERA</td><td>CIUDAD AUTONOMA BUENOS AIRES</td></tr>
+ <tr><td>RP</td><td>PISTONS S.A</td><td>AV. PUEYRREDON 677  </td><td>BALVANERA</td><td>CIUDAD AUTONOMA BUENOS AIRES</td></tr>
+ <tr><td>RP</td><td>DOMINGUEZ EZEQUIEL ALEJANDRO</td><td>PRES JOSE EVARISTO URIBURU 79 PB </td><td>BALVANERA</td><td>CIUDAD AUTONOMA BUENOS AIRES</td></tr>
+ <tr><td>RP</td><td>MANCINI GABRIEL CARLOS</td><td>MRCAL ANTONIO JOSE DE SUCRE 1383  </td><td>BELGRANO</td><td>CIUDAD AUTONOMA BUENOS AIRES</td></tr>
+ <tr><td>RP</td><td>KALAYDJIAN NORBERTO OSCAR</td><td>ALTE MANUEL BLANCO ENCALADA 2336  </td><td>BELGRANO</td><td>CIUDAD AUTONOMA BUENOS AIRES</td></tr>
+ <tr><td>RP</td><td>CS RAPIPAGO MONSERRAT</td><td>MORENO 838  </td><td>CABALLITO</td><td>CIUDAD AUTONOMA BUENOS AIRES</td></tr>
+ <tr><td>RP</td><td>PAZOS SILVIA MARIA</td><td>AVDA DR RICARDO BALBIN 3000  </td><td>COGHLAN</td><td>CIUDAD AUTONOMA BUENOS AIRES</td></tr>
+ <tr><td>RP</td><td>LAGO MAURO RODRIGO</td><td>VICTORIANO AGUILAR 2411  </td><td>COLEGIALES</td><td>CIUDAD AUTONOMA BUENOS AIRES</td></tr>
+ <tr><td>RP</td><td>JUGO GONZALO FERNANDO</td><td>VARELA 310  </td><td>FLORES</td><td>CIUDAD AUTONOMA BUENOS AIRES</td></tr>
+ <tr><td>RP</td><td>KALAYDJIAN NORBERTO OSCAR</td><td>COSQUIN 87  </td><td>LINIERS</td><td>CIUDAD AUTONOMA BUENOS AIRES</td></tr>
+ <tr><td>RP</td><td>OFRIA JORGE OSCAR</td><td>MEDRANO  1648  </td><td>PALERMO</td><td>CIUDAD AUTONOMA BUENOS AIRES</td></tr>
+ <tr><td>RP</td><td>ABATE CECILIA ARGENTINA</td><td>BULNES 2026  </td><td>PALERMO</td><td>CIUDAD AUTONOMA BUENOS AIRES</td></tr>
+ <tr><td>RP</td><td>BALLADA LIONEL ALEJANDRO </td><td>AVDA COBO 1890  </td><td>PARQUE CHACABUCO</td><td>CIUDAD AUTONOMA BUENOS AIRES</td></tr>
+ <tr><td>RP</td><td>BALDINI DAMIAN LUIS</td><td>AVDA SAN JUAN 1422 0 </td><td>SAN CRISTOBAL</td><td>CIUDAD AUTONOMA BUENOS AIRES</td></tr>
+ <tr><td>RP</td><td>A y M Publicidad    </td><td>PARANA 540  </td><td>SAN NICOLAS</td><td>CIUDAD AUTONOMA BUENOS AIRES</td></tr>
+ <tr><td>RP</td><td>FERRI MARIA ISABEL</td><td>AVDA ANGEL GALLARDO 787  </td><td>VILLA CRESPO</td><td>CIUDAD AUTONOMA BUENOS AIRES</td></tr>
+ <tr><td>RP</td><td>GOITEA BETINA PAOLA</td><td>AV MOSCONI  3469  </td><td>VILLA DEVOTO</td><td>CIUDAD AUTONOMA BUENOS AIRES</td></tr>
+ <tr><td>RP</td><td>SAN MARTIN PABLO ALEJANDRO</td><td>GRAL JOSE GERVASIO ARTIGAS 5325 2 </td><td>VILLA PUEYRREDON</td><td>CIUDAD AUTONOMA BUENOS AIRES</td></tr>
+ <tr><td>RP</td><td>LOCUTORIO TRIUNVIRATO   </td><td>AVDA TRIUNVIRATO 5390  </td><td>VILLA URQUIZA</td><td>CIUDAD AUTONOMA BUENOS AIRES</td></tr>
+ <tr><td>RP</td><td>GRUPO ALFAM S.A2</td><td>AV BEVILACQUA 1998 2 </td><td>CIUDAD EVITA</td><td>-</td></tr>
+ <tr><td>RP</td><td>SUAREZ RAUL ANIBAL</td><td>AVDA VELEZ SARSFIELD 1095  </td><td>CIUDAD MADERO</td><td>-</td></tr>
+ <tr><td>RP</td><td>PANTALONE CRISTIAN ADRIAN</td><td>NARDO 6173  </td><td>CLAYPOLE</td><td>-</td></tr>
+ <tr><td>RP</td><td>BARTUCCELLI MIGUEL ANGEL2</td><td>CALLE 202 1224 0 </td><td>DON TORCUATO</td><td>-</td></tr>
+ <tr><td>RP</td><td>LOCUTORIO PELIN</td><td>PASO DE LA PATRIA 266  </td><td>EZEIZA</td><td>-</td></tr>
+ <tr><td>RP</td><td>SAULLO GIANFRANCO ALEXIS</td><td>PEDRO PRAVAZ 527  </td><td>EZEIZA</td><td>-</td></tr>
+ <tr><td>RP</td><td>DA COSTA JESICA JOHAMA</td><td>EVARISTO IGLESIAS 714  </td><td>EZPELETA ESTE</td><td>-</td></tr>
+ <tr><td>RP</td><td>OJEDA RAMONA LILIANA</td><td>BOMBERO VOLUNTARIO SENZABELLO 456  </td><td>FLORENCIO VARELA</td><td>-</td></tr>
+ <tr><td>RP</td><td>AMIGORENA CECILIA GABRIELA    </td><td>AVDA GRAL JOSE DE SAN MARTIN 3485  </td><td>FLORIDA</td><td>-</td></tr>
+ <tr><td>RP</td><td>FERRI MARIA ISABEL</td><td>ANDES 68  </td><td>GARIN</td><td>-</td></tr>
+ <tr><td>RP</td><td>RATTO RODRIGO GUILLERMO</td><td>AV DE LOS CONSTITUYENTES 1658  </td><td>GENERAL PACHECO</td><td>-</td></tr>
+ <tr><td>RP</td><td>GURFINKEL ALEJANDRA L.</td><td>AYACUCHO 53  </td><td>GENERAL RODRIGUEZ</td><td>-</td></tr>
+ <tr><td>RP</td><td>BENZ FERNANDO OSCAR    </td><td>SAN LORENZO 2130  </td><td>GENERAL SAN MARTIN</td><td>-</td></tr>
+ <tr><td>RP</td><td>GIANGIACOMO HORACIO JAVIER</td><td>AVDA MARIA EVA DUARTE DE PERON 3501  </td><td>GENERAL SAN MARTIN</td><td>-</td></tr>
+ <tr><td>RP</td><td>Retamales César Daniel   </td><td>AVDA ALMAFUERTE 212  </td><td>GLEW</td><td>-</td></tr>
+ <tr><td>RP</td><td>SEGUROS S&J </td><td>AVDA BRIG GRAL JUAN MANUEL DE ROSAS 15737  </td><td>GONZALEZ CATAN</td><td>-</td></tr>
+ <tr><td>RP</td><td>MOYANO ANDREA BEATRIZ</td><td>GARZON 6631  </td><td>GONZALEZ CATAN</td><td>-</td></tr>
+ <tr><td>RP</td><td>SOLIS YANINA</td><td>AV EVA DUARTE DE PERON 696  </td><td>GUERNICA</td><td>-</td></tr>
+ <tr><td>RP</td><td>BORDONI HORACIO CARLOS3</td><td>ROSEEAU E/J.KENNEDY Y SANABRIA 1581 0 </td><td>INGENIERO ADOLFO SOURDEAUX</td><td>-</td></tr>
+ <tr><td>RP</td><td>GURFINKEL ALEJANDRA LEONOR</td><td>MAIPU 1425  </td><td>INGENIERO MASCHWITZ</td><td>-</td></tr>
+ <tr><td>RP</td><td>RAYOS Y CENTELLAS</td><td>MADRID 3166  </td><td>ISIDRO CASANOVA</td><td>-</td></tr>
+ <tr><td>RP</td><td>RUGGIERI OMAR WALTER</td><td>AVDA SANTA ROSA 1794  </td><td>ITUZAINGO</td><td>-</td></tr>
+ <tr><td>RP</td><td>VIVAS DELLA ROSALIA</td><td>FRAY GUILLERMO BUTLER 35  </td><td>JOSE CLEMENTE PAZ</td><td>-</td></tr>
+ <tr><td>RP</td><td>GURFINKEL ALEJANDRA LEONOR</td><td>ABRAHAM LINCOLN 1684  </td><td>JOSE INGENIEROS</td><td>-</td></tr>
+ <tr><td>RP</td><td>TOLOSA DANIEL ROBERTO</td><td>66     3244  </td><td>LA PLATA</td><td>-</td></tr>
+ <tr><td>RP</td><td>DIONISIO  MARIO RAUL</td><td>CALLE 56 978  </td><td>LA PLATA</td><td>-</td></tr>
+ <tr><td>RP</td><td>MARCELO ESCALANTE GISPERT </td><td>SITIO DE MONTEVIDEO   28  </td><td>LANUS</td><td>-</td></tr>
+ <tr><td>RP</td><td>ROSSI DIEGO HERNAN</td><td>JOSE MARIA MORENO 405  </td><td>LANUS</td><td>-</td></tr>
+ <tr><td>RP</td><td>MORELLI NELSON </td><td>DEL VALLE IBERLUCEA  2992  </td><td>LANUS</td><td>-</td></tr>
+ <tr><td>RP</td><td>CARDOZO LAURA PATRICIA</td><td>BAHIA BLANCA 644 0 </td><td>LLAVALLOL</td><td>-</td></tr>
+ <tr><td>RP</td><td>BUENA ONDA</td><td>GRAL JUAN LAVALLE 8644  </td><td>LOMA HERMOSA</td><td>-</td></tr>
+ <tr><td>RP</td><td>MULTISHOP SRL   </td><td>JOSE LUIS MURATURE 2216  </td><td>LOMAS DE ZAMORA</td><td>-</td></tr>
+ <tr><td>RP</td><td>RAPIPAGO BOEDO </td><td>DR MARIANO BOEDO 238  </td><td>LOMAS DE ZAMORA</td><td>-</td></tr>
+ <tr><td>RP</td><td>MURATORE ROMINA ELISABETH</td><td>BALCARCE  51  </td><td>LOMAS DE ZAMORA</td><td>-</td></tr>
+ <tr><td>RP</td><td>HEFFLING ANTONELA NOEMI</td><td>CNEL BRANDSEN 3785  </td><td>LOMAS DEL MIRADOR</td><td>-</td></tr>
+ <tr><td>RP</td><td>BORDONI HORACIO CARLOS2</td><td>AVDA PRES JUAN DOMINGO PERON 3110  </td><td>LOS POLVORINES</td><td>-</td></tr>
+ <tr><td>RP</td><td>CARREÑO HUGO MANUEL</td><td>JOSE MADARIAGA 1576  </td><td>MALVINAS ARGENTINAS</td><td>-</td></tr>
+ <tr><td>RP</td><td>PINTO MARIA EMILIA    </td><td>AVDA SANTA FE 1679  </td><td>MARTINEZ</td><td>-</td></tr>
+ <tr><td>RP</td><td>CAMPORRO MARIA VERONICA</td><td>AVDA DOMINGO FAUSTINO SARMIENTO 315  </td><td>MATHEU</td><td>-</td></tr>
+ <tr><td>RP</td><td>COLT SUPPLIES S.A.</td><td>AVDA CALLE REAL 53  </td><td>MERLO</td><td>-</td></tr>
+ <tr><td>RP</td><td>COLT SUPPLIES S.A.2</td><td>AV LIBERTADOR 166  </td><td>MERLO</td><td>-</td></tr>
+ <tr><td>RP</td><td>COLT SUPPLIES S.A.-</td><td>SARANDI 505  </td><td>MERLO</td><td>-</td></tr>
+ <tr><td>RP</td><td>ACHA OSVALDO ELIAS</td><td>EVA PERON 3292  </td><td>MONTE CHINGOLO</td><td>-</td></tr>
+ <tr><td>RP</td><td>ALVARADO GUSTAVO DANIEL</td><td>GDOR LUIS VERNET 2773  </td><td>MONTE GRANDE</td><td>-</td></tr>
+ <tr><td>RP</td><td>RIEDMATTEN RAMIRO</td><td>GRAL JOSE DE SAN MARTIN 67  </td><td>MORON</td><td>-</td></tr>
+ <tr><td>RP</td><td>CARRERE JAVIER LEONARDO</td><td>AVDA RIVADAVIA 17983 0 </td><td>MORON</td><td>-</td></tr>
+ <tr><td>RP</td><td>TREBINO LUIS GABRIEL</td><td>ROMA 404  </td><td>OLIVOS</td><td>-</td></tr>
+ <tr><td>RP</td><td>PANZA DIEGO LUCIANO</td><td>AVDA ALCORTA 600 0 B</td><td>PASO DEL REY</td><td>-</td></tr>
+ <tr><td>RP</td><td>VILLABOA DEL PILAR   </td><td>DOMINGO FAUSTINO SARMIENTO 1146  </td><td>PRESIDENTE DERQUI</td><td>-</td></tr>
+ <tr><td>RP</td><td>RAPI LAS HERAS</td><td>AVDA LAS HERAS 143  </td><td>QUILMES OESTE</td><td>-</td></tr>
+ <tr><td>RP</td><td>TORRETTA ESTEBAN OSVALDO </td><td>AVDA DE MAYO 927  </td><td>RAMOS MEJIA</td><td>-</td></tr>
+ <tr><td>RP</td><td>FERRERO PAULA ANDREA</td><td>Güemes 77  </td><td>RAMOS MEJIA</td><td>-</td></tr>
+ <tr><td>RP</td><td>ANGELI ALICIA SUSANA</td><td>FRAY LUIS BELTRAN 24  </td><td>REMEDIOS DE ESCALADA</td><td>-</td></tr>
+ <tr><td>RP</td><td>RATTO RODRIGO GUILLERMO3</td><td>CNEL VILELA 2685  </td><td>RICARDO ROJAS</td><td>-</td></tr>
+ <tr><td>RP</td><td>DEL TESO LUCIANA IRIS</td><td>SAN LORENZO 3006  </td><td>SAN ANDRES</td><td>-</td></tr>
+ <tr><td>RP</td><td>EL REY DE LA FORTUNA</td><td>RIVADAVIA 1195  </td><td>SAN FERNANDO</td><td>-</td></tr>
+ <tr><td>RP</td><td>LAUZURICA SEBASTIAN ARIEL</td><td>ALSINA 70  </td><td>SAN ISIDRO</td><td>-</td></tr>
+ <tr><td>RP</td><td>SALVO ADRIANA MABEL</td><td>BO SARGENTO CABRAL 1222  </td><td>SAN MIGUEL</td><td>-</td></tr>
+ <tr><td>RP</td><td>BORDONI HORACIO CARLOS 4</td><td>CJAL E TRIBULATO 855 0 </td><td>SAN MIGUEL</td><td>-</td></tr>
+ <tr><td>RP</td><td>PANDULLO CAROLINA BARBARA</td><td>9 DE JULIO 111  </td><td>SAN VICENTE</td><td>-</td></tr>
+ <tr><td>RP</td><td>garcia maria fernanda</td><td>AVDA MEEKS 1223  </td><td>TEMPERLEY</td><td>-</td></tr>
+ <tr><td>RP</td><td>BARTUCCELLI MIGUEL ANGEL</td><td>AVDA DE MAYO 49  </td><td>VILLA ADELINA</td><td>-</td></tr>
+ <tr><td>RP</td><td>RAPIBOSCH</td><td>MARTIN FIERRO 6542  </td><td>VILLA BOSCH</td><td>-</td></tr>
+ <tr><td>RP</td><td>RAPIPAGO LA FRAGATA</td><td>DR IGNACIO ARIETA 440  </td><td>VILLA LUZURIAGA</td><td>-</td></tr>
+ <tr><td>RP</td><td>PRADO JOSE ALBERTO</td><td>AVDA BRIG GRAL JUAN MANUEL DE ROSAS 23943  </td><td>VIRREY DEL PINO</td><td>-</td></tr>
+ <tr><td>RP</td><td>PRADO JOSE ALBERTO2</td><td>BERNARDINO ESCRIBANO 5946  </td><td>VIRREY DEL PINO</td><td>-</td></tr>
+ <tr><td>RP</td><td>LAINO SILVIA MABEL</td><td>PRES CARLOS PELLEGRINI 2111  </td><td>VIRREYES</td><td>-</td></tr>
+ <tr><td>RP</td><td>EL REY DE LA FORTUNA</td><td>AVDA DR NICOLAS AVELLANEDA 3333  </td><td>VIRREYES</td><td>-</td></tr>
+ <tr><td>RP</td><td>RAPI ZEBALLOS</td><td>DR ESTANISLAO SEVERO ZEBALLOS 6186  </td><td>WILDE</td><td>-</td></tr>
+</table>
+</div>
+
+<div class="fixed-footer">
+        <div class="container">Copyright &copy; 2021 @W</div>        
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+fieldset {border: 2px solid #1F497D;background: #fff;border-radius: 5px;padding: 10px;}
+fieldset legend {background: #1F497D;color: #fff;padding: 0px 6px ;font-size: 25px;max-width:97%;border-radius: 5px;/*box-shadow: 0 0 0 5px #ddd;*/;margin-left: 20px;text-transform:uppercase;}
+.sub{background: #69727d;color: #fff;padding: 0px 6px ;font-size: 18px;max-width:97%;border-radius: 5px;/*box-shadow: 0 0 0 5px #ddd;*/;margin-left: 20px;text-transform:Uppercase;}
+.sub2{background: #69727d;color: #fff;padding: 0px 6px ;font-size: 14px;max-width:97%;border-radius: 5px;/*box-shadow: 0 0 0 5px #ddd;*/;margin-left: -3px;text-transform:Uppercase;}
+.tfield-titulo{background: #007acc;width: 96%;height:25px;color: #fff;padding: 0px 6px ;font-size: 18px;max-width:97%;border-radius: 5px;/*box-shadow: 0 0 0 5px #ddd;*/;margin-left: 0px;text-transform:Uppercase;}
+.tfield{margin-left:-9px;margin-top: 4px;}
+.faq-header {font-size: 2em;border-bottom: 1px dotted #ccc;padding: 1em 0;}
+.faq-c {border-bottom: 1px dotted #ccc;padding: 0.5em 0;}
+.faq-t {line-height: 1em;color: #aaa;font-family: sans-serif;float: left;font-weight: 700;padding-right: 0.3em;-webkit-transition: all 200ms;-moz-transition: all 200ms;transition: all 200ms;}
+.faq-o {transform: rotate(-45deg);transform-origin: 50% 50%;-ms-transform: rotate(-45deg);-ms-transform-origin: 50% 50%;-webkit-transform: rotate(-45deg);  -webkit-transform-origin: 50% 50%;-webkit-transition: all 200ms;-moz-transition: all 200ms;transition: all 200ms;}
+.faq-q {cursor: pointer;font-size: 1.3em;font-weight: 100;}
+.faq-a {clear: both;color: #666;display: none;padding-left: 1.5em;}
+.alert {position:relative;padding:.75rem 1.25rem;margin-bottom:1rem;border:1px solid transparent;border-radius:.25rem;}
+.alert-danger {background-color: #f2dede;border-color: #ebcccc;color: #a94442;}
+.alert-primary {color: #004085; background-color: #cce5ff; border-color: #b8daff;}
+
+#slider {position: relative;overflow: hidden;width: 400px;height: 300px;}
+#slider ul {position: relative;margin: 0;padding: 0;height: 200px;list-style: none;left: 0px;}
+#slider ul li {position: relative;display: block;float: left;margin: 0;padding: 0;width: 400px;height: 300px;}
+a.prev, a.next {position: absolute;top: 40%;z-index: 999;display: block;padding: 4% 3%;width: auto;height: auto;background: #2a2a2a;color: #fff;text-decoration: none;font-weight: 600;font-size: 18px;opacity: 0.8;  cursor: pointer;}
+a.prev:hover, a.next:hover {opacity: 1;-webkit-transition: all 0.2s ease;}
+a.prev {border-radius: 0 2px 2px 0;}
+a.next {right: 0;border-radius: 2px 0 0 2px;}

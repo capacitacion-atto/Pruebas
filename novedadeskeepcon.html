@@ -1,0 +1,107 @@
+﻿<html lang="en">
+<head>
+ <script>
+var busqueda = document.getElementById('buscar');
+
+    buscaTabla = function(){
+      texto = document.getElementById('buscar').value
+	  texto=texto.toLowerCase();
+      var r=0;
+      while(row = document.getElementById('tabla').tBodies[0].rows[r++])
+      {
+        if ( row.innerText.toLowerCase().indexOf(texto) !== -1 )
+          row.style.display = null;
+        else
+          row.style.display = 'none';
+      }
+    }
+
+    function vs(URL){ 
+   window.open(URL,"Info","width='80%',height=500,scrollbars=NO") 
+} 
+
+</script>
+<style>
+td{    padding: 4px;border: 1px solid;}
+a:link, a:visited {
+  background-color: #57727f;
+  font-weight:bold;
+  color: white;
+  padding: 10px 0px 10px 13px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  width:99%;
+  font-size:1.2em;
+}
+strong{ background-color: #e1e7ea;color: black;padding: 1px 7px;;width:99%;display: inline-block;font-size:0.8em;}
+
+a:hover, a:active {
+  background-color:#3e515b;
+}
+p{padding: 2px 10px 2px 10px;}
+
+
+
+.fixed-header, .fixed-footer{
+        width: 100%;
+        position: fixed;        
+        background: #333;
+        padding: 5px 0;
+        color: #fff;
+    }
+	body{        
+        padding-top: 60px;
+        padding-bottom: 40px;
+		font-family:calibri;
+    }
+    .container{
+        width: 95%;
+        margin: 0 auto; /* Center the DIV horizontally */
+    }
+	.fixed-header{
+        top: 0;
+    }
+    .fixed-footer{
+        bottom: 0;
+    }    
+	
+
+</style>
+</head>
+
+<body style="margin-left: 0px;">
+
+<div class="fixed-header">
+        <div class="">
+			<div style="width:19%;float:left;padding: 10px 0px 5px 5px;"><b style="font-size:30px;margin-left: 20%;">NOVEDADES</b></div>
+           	<div style="width:79%;float:left;padding:5px;"><input id="buscar" type="text" class="form-control" onkeyup="buscaTabla()" placeholder="BUSCAR..." style="width:100%;height:45px;font-family:calibri;font-size:30px;background-image: url('imgs/search.png');background-position: 8px 8px;  background-repeat: no-repeat;padding: 0px 0px 0px 45px"/></div>
+        </div>
+</div>
+<div class="container">
+<table width="100%"  class="display dataTable no-footer"  cellspacing="2" id="tabla" cellspacing="0" style="font-family:calibri;width:100%">
+		<tbody >
+		<tr><td><a href="#">0005 - Campañas Upsell & Cross sell</a><p><img src="NOV/0005.PNG"/></p>
+		<strong>Publicado: 10/09/2018 - 14:59 </strong></td></tr>
+		<tr><td><a href="#">0004- Importante: NO utilizar modulo para bajas de SVA</a><p><img src="NOV/0004.PNG"/></p>
+		<strong>Publicado: 10/09/2018 - 09:11 - *** ACTUALIZACION NOV 0001 ***</strong></td></tr>
+		<tr><td><a href="#">0003 - T Play Full: cambios en condiciones comerciales -- corrección servicios afectados --</a><p><img src="NOV/0003.PNG"/></p>
+		<strong>Publicado: 10/09/2018 - 16:15</strong></td></tr>
+		<tr><td><a href="#">0002 -T Play Full: cambios en condiciones comerciales</a><p><img src="NOV/0002.PNG"/></p>
+		<strong>Publicado: 9/09/2021 - 15:30</strong></td></tr>
+		<tr><td><a href="#">0001- Bajas SVA: incidencia resuelta</a><p><img src="nov/0001.png"></p>
+		<strong>Publicado: 9/09/2021 - 10:23 - *** NO VIGENTE ***</strong></td></tr>
+				
+		
+<!---Pegar arriba de esta linea--->
+	</tbody>
+	
+</table>
+
+</div>
+<div class="fixed-footer">
+        <div class="container">Copyright &copy; 2021 @W</div>        
+</div>
+</div>
+ </body>
+</html>

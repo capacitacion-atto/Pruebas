@@ -1,0 +1,284 @@
+<html>
+<head>
+<Style>
+<style>
+table{border-collapse: collapse;width: 100%;}
+th, td {text-align: left;padding: 8px;}
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.fixed-header, .fixed-footer{
+        width: 100%;
+        position: fixed;        
+        background: #333;
+        padding: 5px 0;
+        color: #fff;
+    }
+	body{        
+        padding-top: 60px;
+        padding-bottom: 40px;
+		font-family:calibri;
+    }
+    .container{
+        width: 95%;
+        margin: 0 auto; /* Center the DIV horizontally */
+    }
+	.fixed-header{
+        top: 0;
+    }
+    .fixed-footer{
+        bottom: 0;
+    }    
+	
+
+</style>
+</style>
+<script>
+var busqueda = document.getElementById('buscar');
+
+    buscaTabla = function(){
+      texto = document.getElementById('buscar').value
+	  texto=texto.toLowerCase();
+      var r=0;
+      while(row = document.getElementById('tabla').tBodies[0].rows[r++])
+      {
+        if ( row.innerText.toLowerCase().indexOf(texto) !== -1 )
+          row.style.display = null;
+        else
+          row.style.display = 'none';
+      }
+    }
+
+    function vs(URL){ 
+   window.open(URL,"Info","width='80%',height=500,scrollbars=NO") 
+} 
+
+</script>
+
+</head>
+<body>
+<div class="fixed-header">
+<input id="buscar" type="text" class="form-control" onkeyup="buscaTabla()" placeholder="BUSCAR..." style="width:100%;height:40px;font-family:calibri;font-size:30px;background-image: url('imgs/search.png');background-position: 8px 8px;  background-repeat: no-repeat;padding: 0px 0px 0px 45px"/>
+</div>
+<div class="container">
+ <table id="tabla" style="font-family:calibri;width:100%">
+ <thead style="background-color:000;color:fff;width:100%">
+ <tr><th style="width:3%">REG</th><th style="width:20%">Clasificacion</th><th style="width:20%">SubClasificacion</th><th style="width:40%">Motivo</th><th style="width:17%">Accesos</th></tr>
+ </thead>
+ 
+ 
+ <tbody style="font-size:13px;">
+ 
+ 
+<tr><td>SU</td><td>ATC-Gestion Instalaciones</td><td>ANULACION DE GA CAMBIO DE DOMICILIO</td><td>Registro ante solicitud de anulacion de la GA de CCD</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_ccd_anulacion.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Gestion Instalaciones</td><td>AGENDA / REAGENDA</td><td>Registro ante agendamiento</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_inst_confirmaciondeagendainst.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Gestion Instalaciones</td><td>DESISTE INSTALACION</td><td>Registro ante informacion de Desiste de instalacion</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_inst_sudeinstalaciones.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Gestion Instalaciones</td><td>SE CARGA CAMBIO DE DOMICILIO</td><td>Registro ante gestion de CCD</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_instalaciones_cambiosdom.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Gestion Instalaciones</td><td>SOLICITA MODIFICACION DE INSTALACION</td><td>Registro ante solicitud de modificacion de instalacion</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_inst_modificaciondeinstalacion.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informa sobre Instalaciones</td><td>CONSULTA CAMBIO DE DOMICILIO</td><td>Registo ante consulta sobre procedimiento de CCD</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_instalaciones_cambiosdom.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informa sobre Instalaciones</td><td>CONSULTA MODIFICACION DE INSTALACION/RELEVAMIENTO</td><td>Registro ante consultas sobre Modificacion de Instalacion / relevamiento</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_inst_modificaciondeinstalacion.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informa sobre Instalaciones</td><td>INFORMA AGENDA INSTALACION</td><td>Registro ante consultas sobre instalaciones pendientes, agendadas o rechazadas</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_inst_confirmaciondeagendainst.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informa sobre Instalaciones</td><td>RECLAMA INCUMPLIMIENTO AGENDA</td><td>Registro ante relcamos por demoras o incumplimiento</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_inst_sudeinstalaciones.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informa sobre Instalaciones</td><td>RELEVAMIENTO / ARMADO</td><td>Registro ante consultas sobre relevamiento</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_inst_pedidorelevamientotecnico.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informa sobre Instalaciones</td><td>RELEVAMIENTO / ARMADO</td><td>Registro ante consultas sobre armado de edificio</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_instalaciones_armados.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informa sobre Instalaciones</td><td>RELEVAMIENTO / ARMADO</td><td>Registro ante consultas sobre normalizacion</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_instalaciones_normalizacion.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informa sobre Instalaciones</td><td>SOLICITA PERMISO DE INSTALACION</td><td>Registro ante solicitud de Modelo de Permiso</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_instalaciones_armados.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Servicios Adicionales</td><td>CONTROL REMOTO</td><td>Registro ante consultas varias sobre control remoto</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_controlremotoporvoz.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Servicios Adicionales</td><td>DECOS</td><td>Registro ante consultas sobre Decodificadores</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_cable.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Servicios Adicionales</td><td>Disney+</td><td>Registro ante consultas sobre Disney+</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_streaming_disney.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Servicios Adicionales</td><td>INDICA FALLAS EN SUCURSAL VIRTUAL</td><td>Registro ante llamados donde se indiquen fallas en el funcionamiento de SV</td><td><a href="javascript:vs('-')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Servicios Adicionales</td><td>PACKS</td><td>Registro antes consultas sobre Packs Premium Star / HBO / Futbol / Hot Pack </td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bajas_bajaseventos.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Servicios Adicionales</td><td>PLATAFORMAS STREAMING</td><td>Registro ante consultas sobre plataformas Netflix / Youtube / Amazon Prime / Disney+ / Premier Access</td><td><a href="javascript:vs('-')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Servicios Adicionales</td><td>RED TELECENTRO WIFI</td><td>Registro ante consultas sobre el Servicio</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_wifizone.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Servicios Adicionales</td><td>TELEFONIA</td><td>Registro ante consultas sobre el Servicio</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_telefonia.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Servicios Adicionales</td><td>T PHONE</td><td>Registro ante consultas sobre el Servicio</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_tel_tphone.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Servicios Adicionales</td><td>T PLAY</td><td>Registro ante consultas sobre el Servicio</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_tplay.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion General</td><td>ACTUALIZACION DATOS PERSONALES</td><td>Registro ante actualizacion de datos del cliente </td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_gestion_actualizaciontel.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion General</td><td>ACTUALIZACION DATOS PERSONALES</td><td>Registro ante solicitud de modificar datos erroneos</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_gestion_modificaciondedatosclcumplidos.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion General</td><td>CAMBIO DE TITULARIDAD</td><td>Se debera informar procedimiento: envio de mail con Documentacion de Titular actual y nuevo titular</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_fact_dat_cambiotitularidad.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion General</td><td>CONSULTA CONDICIONES COMERCIALES</td><td>Registro antes consultas de Contratistas, Horarios de atencion, Robo o retiro de Equipos,</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_recuperodeequipos.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion General</td><td>CONSULTA CONDICIONES COMERCIALES</td><td>Registro antes consultas de Documentacion</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_gestion_modificaciondedatosclcumplidos_usosu.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion General</td><td>CONSULTA CONDICIONES COMERCIALES</td><td>Registro antes consultas de Acciones promocionales</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_promociones.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion General</td><td>CONSULTA CONDICIONES COMERCIALES</td><td>Registro antes consultas de Plazo de Recupero</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_cumplirrecuperarbaja.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion General</td><td>CONSULTA CONDICIONES COMERCIALES</td><td>Registro antes consultas de Auditorias</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_auditoriacalidad.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion General</td><td>PROGRAMACION</td><td>Registro ante consultas varias de programacion</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_fechafutbol.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion General</td><td>PROCESO DE REACTIVACION</td><td>Registro ante consultas sobre la Reactivacion que lleva a delante Retencion</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bajasdeservicio.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion General</td><td>SUCURSAL VIRTUAL/AUTOGESTION CUENTA</td><td>Registro ante consultas sobre autogestiones en Sucursal Virtual</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_sucvirt.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion General</td><td>SUCURSAL VIRTUAL/COMO ACCEDER A LA FACTURA</td><td>Registro ante consultas sobre como acceder a la factura</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_sucvirt.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion General</td><td>SUCURSAL VIRTUAL/REGISTRO</td><td>Registro ante consultas sobre como registrarse en la plataforma</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_sucvirt.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Downgrade Servicio</td><td>BAJA DE PACKS</td><td>Registro ante consulta sobre baja de Packs Premium. Autogestion desde Sucursal Virtual</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bajaeventos.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Downgrade Servicio</td><td>BAJA DE DECOS</td><td>Registro ante consulta sobre baja de Decodificadores: se contactaran para retirar el equipo</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bajasdecos.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Downgrade Servicio</td><td>BAJA ADICIONALES</td><td>Registro ante consulta sobre baja de Tplay / Tphone/ Amazon / Disney+ /Telecentro Wifi</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_tplaybaja.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Downgrade Servicio</td><td>BAJA ADICIONALES</td><td>Registro ante consulta sobre baja de T phone</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_tel_tphone.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Downgrade Servicio</td><td>BAJA ADICIONALES</td><td>Registro ante consulta sobre baja de Amazon</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_streaming_amazon.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Downgrade Servicio</td><td>BAJA ADICIONALES</td><td>Registro ante consulta sobre baja de Disney+</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_streaming_disney.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Downgrade Servicio</td><td>BAJA ADICIONALES</td><td>Registro ante consulta sobre baja de Telecentro Wifi</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_telecentrowifi_home.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Downgrade Servicio</td><td>DOWNGRADE INTERNET</td><td>Registro ante consulta sobre Downgrade de velocidad</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_internet_downgrade.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Downgrade Servicio</td><td>DOWNGRADE TELEFONIA</td><td>Registro ante consulta sobre Downgrade de Telefonia</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_telefonia.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Downgrade Servicio</td><td>DOWNGRADE TELEVISION</td><td>Registro ante consulta sobre Downgrade de a servicio 4K a HD</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_decodificadores_4k_procesobaja.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Downgrade Servicio</td><td>DOWNGRADE TELEVISION</td><td>Registro ante consulta sobre Downgrade de a servicio HD a SD</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_cable_cambiohs.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Downgrade Servicio</td><td>DOWNGRADE TELEVISION</td><td>Registro ante consulta sobre Downgrade de a servicio Oro a Plata</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_gestion_cambiooroplata.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Upgrade Servicios</td><td>UPGRADE INTERNET</td><td>Registro ante consulta sobre upgrade de velocidad</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_intenet_velocidadesdisponibles.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Upgrade Servicios</td><td>UPGRADE TELEFONIA</td><td>Registro ante consulta sobre upgrade de Telefonia</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_telefonia.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Consulta Upgrade Servicios</td><td>UPGRADE TELEVISION</td><td>Registro ante consulta sobre upgrade de a servicio HD / SD / Plata</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_gestion_cambiooroplata.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Devoluciones al Cliente</td><td>GESTION NOTA DE CREDITO /DEBITO</td><td>Registro ante gestiones de NC o Debito</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_gestion_expertonc.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Devoluciones al Cliente</td><td>RECLAMO DE AJUSTE / NC / REINTEGRO</td><td>Registro ante reclamos por ajustes, NC o Reintegros pendientes o no registrados</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_facturacion_notascredito.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Devoluciones al Cliente</td><td>SOLICITA AJUSTES DIAS SIN SERVICIO</td><td>Registro ante solicitudes de ajustes momentaneamente no disponibles para gestionar</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_facturacion_notascredito.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Devoluciones al Cliente</td><td>SOLICITA REINTEGRO</td><td>Registro ante solicitudes de reintegros momentaneamente no disponibles</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_facturacion_reintegros.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Gestion upgrade de Servicio</td><td>UPGRADE TELEVISION</td><td>Registro ante solictud de upgrade a HD o 4K</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_gestion_cambiooroplata.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Gestion upgrade de Servicio</td><td>UPGRADE INTERNET</td><td>Registro ante solictud de upgrade de velocidad</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_intenet_velocidadesdisponibles.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Venta servicios Adicionales</td><td>DECODIFICADOR</td><td>Registro ante la venta de un Decodificador</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_deco_main.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Venta servicios Adicionales</td><td>PACKS</td><td>Registro ante la activacion de Packs</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bajas_bajaseventos.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Venta servicios Adicionales</td><td>PPV</td><td>Registro ante la venta de PPV</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bajas_bajaseventos.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Venta servicios Adicionales</td><td>T PHONE</td><td>Registro ante la informacion de Venta de TPone. Debe gestionarlo desde SV</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_tel_tphone.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion Factura</td><td>CONSULTA AJUSTE</td><td>Registro ante consultas sobre ajuste ya realizados o pendientes de aplicar</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_facturacion_notascredito.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion Factura</td><td>CONSULTA CAMBIOS EN TIPO DE FACTURA</td><td>Registro ante consultas sobre cambios de factura A a B o viceversa </td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_facturacion_cambiotipofact.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion Factura</td><td>CONSULTA CAMBIOS EN TIPO DE FACTURA</td><td>Registro ante consultas sobre cambios de Ingresos Brutos</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_facturacion_consultasingresosbrutos.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion Factura</td><td>CONSULTA REINTEGRO</td><td>Registo ante consultas sobre estados de reintegros</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_facturacion_reintegros.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion Factura</td><td>EXPLICACION DE FACTURA</td><td>Registro ante todo tipo de consultas sobre las facturas emitidas, ajustes, promociones, bonificaciones costos de Eventos y planes comerciales</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_facturacion.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion Factura</td><td>EXPLICACIÓN DE FACTURA CON AUMENTO</td><td>Registro ante consultas de facturacion con aumento de servicios</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_hr_mesesaumento.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion Factura</td><td>PASE A FACTURA PAPEL</td><td>Registro ante consultas de pase a factura papel. Informar costo</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_gestion_paseapapel.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion Factura</td><td>SOLICITA ENVIO FACTURA</td><td>Registro ante soliocitud de envio de factura. Informar funcionalidades de SV, cuenta con las ultiomas 5 facturas disponibles</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_facturacion_copiafiel.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Gestion Cobranza</td><td>ALTA O MODIFICACION DE DEBITO</td><td>Registro ante alta o modificacion de Debito</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_fact_debitoautomatico_modificacion.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Gestion Cobranza</td><td>DESACTIVA DEBITO</td><td>Registro ante baja de Debito</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_fact_dat_adhesionadat.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Gestion Cobranza</td><td>GESTION DESBLOQUEO</td><td>Registro ante desbloqueo de servicio</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bloqueoslevel8.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Gestion Cobranza</td><td>PAGO CON TARJETA</td><td>Registro ante gestion de pago con tarjeta</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_fact_pol_pagovisaamexmaster.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion Cobranza</td><td>CONSULTA BLOQUEO</td><td>Registro ante consultas sobre bloqueo de servicio /bloqueo telefonia</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bloqueoslevel8.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion Cobranza</td><td>FORMAS DE PAGO</td><td>Registro ante consultas sobre las diferentes formas de pago</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_fact_formasdepago.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion Cobranza</td><td>INFORMA COBRANZA TERCEROS</td><td>Registro ante consultas sobre gestion de Estudio o Veraz</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_facturacion_veraz.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion Cobranza</td><td>PAGO NO IMPUTADO</td><td>Registro ante verificacion pagos no ingresados</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_facturacion_pagnoing.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion Cobranza</td><td>PROBLEMAS PARA TOMAR PAGO</td><td>Registro ante desperfectos o caidas para tomar pagos</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_fact_fp_pagotelefonicoonline.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Informacion Cobranza</td><td>SE INFORMA RECHAZO DE DEBITO</td><td>Registro ante verificacion de rechazos de pagos o pagos no ingresados</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_fact_dat_rechazodat.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Gestion Downgrade de Servicio</td><td>BAJA DE ADICIONALES</td><td>Registro ante gestion de bajas de servicios adicionales: Decos/Tplay /Tphone. Informar proceso de entrega de equipos</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bajasdecos.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Gestion Downgrade de Servicio</td><td>BAJA DE PACKS</td><td>Registro ante gestion de baja de packs. Infromar autogestion desde SV</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bajaseventosydecos.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Gestion Downgrade de Servicio</td><td>DOWNGRADE TELEVISION</td><td>Registro ante gestion de pase a HD, SD o plata</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_cable_cambiohs.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Gestion Downgrade de Servicio</td><td>DOWNGRADE INTERNET</td><td>Registro ante gestiones de Downgrade de velocidad</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_internet_downgrade.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Contencion Residencial</td><td>ACTIVACIÓN PROMO HD CONTENCION</td><td>Registro ante contencion</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_contencion_hd.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Contencion Residencial</td><td>SE TOMA DAT/CBU CONTENCION</td><td>Registro ante contencion</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_contencion_dat.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Contencion Residencial</td><td>BAJA EVENTOS CONTENCION</td><td>Registro ante contencion</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_contencion_packs.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Contencion Residencial</td><td>BAJA PACK 4K CONTENCION</td><td>Registro ante contencion</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_contencion_4khd.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Contencion Residencial</td><td>BAJA VELOC. CONTENCION</td><td>Registro ante contencion</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_contencion_velocidad.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Contencion Residencial</td><td>CAMBIO HD A SD CONTENCION</td><td>Registro ante contencion</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_contencion_hdsd.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Contencion Residencial</td><td>MOT TECNICO-CCD ZONA C/RED-DEM CCD - DEM INST</td><td>Registro ante contencion</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_hr_contfueraeco.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Contencion Residencial</td><td>PASE PACK ORO A PACK PLATA CONTENCION</td><td>Registro ante contencion</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_contencion_oroplata.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Situaciones Eventuales</td><td>PRESTACION BASICA UNIVERSAL</td><td>Registro ante consutlas sobre el Plan PBU</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plan_PBU.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Backoffice Adm - Pedidos Especiales</td><td>DOWNGRADE ORO A PLATA</td><td>Registro ante solicitud de gestion</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_gestion_cambiooroplata.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Registros de Incidencia Masiva</td><td>INCIDENCIA PACK FUTBOL</td><td>Registro de reclamos por Incidencia PPV</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_incidenciasmasivas.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Registros de Incidencia Masiva</td><td>DESBLOQUEO NO PROCESADO</td><td>Registro ante reclamos por Desbloqueos</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_incidenciasmasivas.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Registros de Incidencia Masiva</td><td>BAJA AMAZON</td><td>Registro ante solicitud de baja del Servicio adicional</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bajaeventos.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Registros de Incidencia Masiva</td><td>BAJA DISNEY+</td><td>Registro ante solicitud de baja del Servicio adicional</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bajaeventos.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Registros de Incidencia Masiva</td><td>BAJA HBO</td><td>Registro ante solicitud de baja del Pack</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bajaeventos.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Registros de Incidencia Masiva</td><td>BAJA HOT PACK</td><td>Registro ante solicitud de baja del Pack</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bajaeventos.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Registros de Incidencia Masiva</td><td>BAJA PACK FUTBOL</td><td>Registro ante solicitud de baja del Pack</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bajaeventos.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Registros de Incidencia Masiva</td><td>BAJA STAR PREMIUM</td><td>Registro ante solicitud de baja del Pack</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bajaeventos.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Registros de Incidencia Masiva</td><td>BAJA TELECENTRO WIFI</td><td>Registro ante solicitud de baja del Pack</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bajaeventos.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Registros de Incidencia Masiva</td><td>BAJA TINDER</td><td>Registro ante solicitud de baja del Servicio adicional</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bajaeventos.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Registros de Incidencia Masiva</td><td>BAJA TPHONE</td><td>Registro ante solicitud de baja del Pack</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bajaeventos.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Registros de Incidencia Masiva</td><td>BAJA TPLAY</td><td>Registro ante solicitud de baja del Servicio adicional</td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bajaeventos.html')">+Info</a></td></tr>
+<tr><td>SU</td><td>ATC-Gestion Seguimiento CCADM</td><td>SE CORTA COMUNICACION CON CLIENTE</td><td>Uso interno Teams</td><td>-</td></tr>
+<tr><td>SU</td><td>ATC-Gestion Seguimiento CCADM</td><td>SE PASA PEDIDO TEAM ACC</td><td>Uso interno Teams</td><td>-</td></tr>
+<tr><td>SU</td><td>ATC-Gestion Seguimiento CCADM</td><td>SE PASA PEDIDO TEAM ATENTO</td><td>Uso interno Teams</td><td>-</td></tr>
+<tr><td>SU</td><td>ATC-Gestion Seguimiento CCADM</td><td>SE PASA PEDIDO TEAM KONECTA</td><td>Uso interno Teams</td><td>-</td></tr>
+<tr><td>SU</td><td>ATC-Gestion Seguimiento CCADM</td><td>SEGUIMIENTOS DE CASOS TEAM</td><td>Uso interno Teams</td><td>-</td></tr>
+<tr><td>SU</td><td>ATC-Gestion Seguimiento CCADM</td><td>RECONTACTO.-.</td><td>Uso interno Teams</td><td>-</td></tr>
+<tr><td>SU</td><td>ATC-Gestion Seguimiento CCADM</td><td>LLAMADO POR PEDIDO DE SUPERVISOR.-.</td><td>Uso interno Teams</td><td>-</td></tr>
+<tr><td>RA</td><td>BACKOFFICE CALL ADM. RESIDENCIAL</td><td>CAMBIO DE LINEA TELEFONICA</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_telefonia_cambionumerodelinea.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_ra_cambiolineatel.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>BACKOFFICE CALL ADM. RESIDENCIAL</td><td>CAMBIOS DE ESTADO DE PRODUCTOS</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_instalaciones_procesos.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_ra_cambioestadoproductos.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>BACKOFFICE CALL ADM. RESIDENCIAL</td><td>CIERRE DE VISITAS TECNICAS (INST)</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_instalaciones_procesos.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_ra_cierredevtinst.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>BACKOFFICE CALL ADM. RESIDENCIAL</td><td>CUMPLIR BAJA</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_cumplirrecuperarbaja.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_ra_cumplirrecupbaja.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>BACKOFFICE CALL ADM. RESIDENCIAL</td><td>ENVIO DE DOCUMENTACION DEMORADA</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>BACKOFFICE CALL ADM. RESIDENCIAL</td><td>LEV. INCUMPLIDOS / PERMISOS</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_instalaciones_procesos.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_transferencias.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>BACKOFFICE CALL ADM. RESIDENCIAL</td><td>ND REPOSICION EQUIPO CLTE EN BAJA</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>BACKOFFICE CALL ADM. RESIDENCIAL</td><td>NO SE PUEDE AGENDAR</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_instalaciones_procesos.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_ra_nosepuedeagendar.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>BACKOFFICE CALL ADM. RESIDENCIAL</td><td>PROBLEMAS ADM. CON DECO/MODEM</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_deco_problemaadmdecomodem.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_ra_problemaadmdecomodem.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>BACKOFFICE CALL ADM. RESIDENCIAL</td><td>SOLICITUD CBIO. TITULARIDAD PENDIENTE.</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>BACKOFFICE ADM GESTIONES ESPECIALES</td><td>ACTIVACION DE PROMO ENCARGADO</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>BACKOFFICE ADM GESTIONES ESPECIALES</td><td>GA CCDD - NO SE PUEDEN CREAR MAS VIVIENDAS EN DOMIC</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>BACKOFFICE ADM GESTIONES ESPECIALES</td><td>GENERAR RECLAMO A SISTEMAS</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>BACKOFFICE ADM GESTIONES ESPECIALES</td><td>LIBERAR REINTEGRO EN ESTADO CANCELADO A CONFIRMAR</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>BACKOFFICE ADM GESTIONES ESPECIALES</td><td>PACK CONTRATADO X WEB/APP NO IMPACTA PROMO</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>BACKOFFICE ADM GESTIONES ESPECIALES</td><td>TITULAR ERRONEO EN INF. TECNICA</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>BACKOFFICE ADM GESTIONES ESPECIALES</td><td>VENTA VTA. WEB CARGO DE INSTALACION</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>REINTEGROS</td><td>ANULAR REINTEGRO</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>REINTEGROS</td><td>RECLAMA REINTEGRO POR ERROR EN DNI</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_facturacion_reintegros.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_reintegros.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>REINTEGROS</td><td>SOLICITA REINTEGRO CON TRANSFERENCIA</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>CORRECCION DE DATOS</td><td>MODIFICACION DE DATOS ERRONEOS</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>CORRECCION DE DATOS</td><td>MODIFICACION DE ENTRE CALLES</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_gestion_modificaciondedatosclcumplidos.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_correcciondedatos.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>AJUSTES</td><td>DEVOLUCION DIAS SIN SERVICIO</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_ajustes_vencido.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_ajustes.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>PEDIDO DE NC POR ACUERDO GERENCIAL</td><td>PEDIDO DE NC POR ACUERDO GERENCIAL</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>LLAMADO ERRONEO DE IVR</td><td>POR MOROSIDAD</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_fact_dat_accionesdecobranzasdecoivr.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_llamadoerroneoivr.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>DISNEY + COMERCIAL</td><td>FACTURACION DISNEY</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>ESCALAMIENTO N3</td><td>PROBLEMA CON ENTREGA CRV​</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>UHF - CAMBIO DE DOMICILIO</td><td>UHF-CAMBIO DE DOMICILIO</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_uhf_cambiodedomicilio.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_uhfcamdiosdom.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>RECLAMO X SERVICE</td><td>DAÑO A LA PROPIEDAD</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>RECLAMO X SERVICE</td><td>DAÑO EQUIPO ELECTRONICO.</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>RECLAMO X SERVICE</td><td>DESEMPEÑO DEL INSTALADOR</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>RECLAMO X SERVICE</td><td>FALTANTE DE PERTENENCIAS</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>RECLAMO X SERVICE</td><td>OLVIDO DE HERRAMIENTA</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>RECLAMO X INSTALACION</td><td>DAÑO A LA PROPIEDAD</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>RECLAMO X INSTALACION</td><td>DAÑO EQUIPO ELECTRONICO.</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>RECLAMO X INSTALACION</td><td>DESEMPEÑO DEL INSTALADOR</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>RECLAMO X INSTALACION</td><td>FALTANTE DE PERTENENCIAS</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>RECLAMO X INSTALACION</td><td>OLVIDO DE HERRAMIENTA</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>RECLAMOS FORMALES</td><td>1. PEDIDO DE CONTACTO EJECUTIVO RF ADM - TEC</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>DESISTE DE BAJA</td><td>REACTIVACION DEL SERVICIO</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bajasdeservicio.html')">+Info</a></td></tr>
+<tr><td>RA</td><td>COBRANZAS RESIDENCIAL</td><td>BLOQUEO EN ERROR</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bloqueos.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_cobranzasresidencial.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>COBRANZAS RESIDENCIAL</td><td>QUITAR DE VERAZ</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_facturacion_veraz.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_cobranzasresidencial.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>ADMINISTRACION DE VENTAS</td><td>CONTACTOS VENTAS SITIO WEB</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_ventas_web.html')">+Info</a></td></tr>
+<tr><td>RA</td><td>ADMINISTRACION DE VENTAS</td><td>GESTIONAR PERMISO</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_ventas_permiso.html')">+Info</a></td></tr>
+<tr><td>RA</td><td>ADMINISTRACION DE VENTAS</td><td>LEVANTAR ANULACIÓN/INCUMPLIMIENTO </td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>ADMINISTRACION DE VENTAS</td><td>MODIFICAR DATOS DOMICILIO</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_ventas_domicilio.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_administraciondeventas.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>ADMINISTRACION DE VENTAS</td><td>MODIFICAR DATOS TITULAR</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_ventas_datos.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_administraciondeventas.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>ADMINISTRACION DE VENTAS</td><td>MODIFICAR PLAN</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_ventas_plan.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_administraciondeventas.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>ADMINISTRACION DE VENTAS</td><td>MODIFICAR PRODUCTOS</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_ventas_productos.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_administraciondeventas.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>ADMINISTRACION DE VENTAS</td><td>RETENCION PEND. DE ANTICIPO</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_ventas_pendienteanticipo.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_administraciondeventas.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>ADMINISTRACION DE VENTAS</td><td>RETENCIÓN PERSONA DUPLICADA</td><td></td><td>-</td></tr>
+<tr><td>RA</td><td>CAMBIO A FACTURA A/B</td><td>PEDIDO DE CAMBIO A FACTURA A</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_facturacion_cambiotipofact.html')">+Info</a></td></tr>
+<tr><td>RA</td><td>CONFIRMACION DE VISITA PARA AUDITORIA CALIDAD</td><td>CONSULTA MAS DETALLES</td><td></td><td>-&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_confirmavisitaauditoria.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>CONFIRMACION DE VISITA PARA AUDITORIA CALIDAD</td><td>RECHAZA AUDITORIA</td><td></td><td>-&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_confirmavisitaauditoria.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>TELEF RESID</td><td>BLOQUEOS - Eliminar Bloqueos</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_telefonia_tipodebloqueo.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_telefresid.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>TELEF RESID</td><td>BLOQUEOS - Celu y LD Internacional (CPP Y LDI)</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_telefonia_tipodebloqueo.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_telefresid.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>TELEF RESID</td><td>BLOQUEOS - Celulares (CPP)</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_telefonia_tipodebloqueo.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_telefresid.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>TELEF RESID</td><td>BLOQUEOS - Celulares y Larga distancia (CPP Y LD)</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_telefonia_tipodebloqueo.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_telefresid.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>TELEF RESID</td><td>BLOQUEOS - Larga distancia Internacional (LDI)</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_telefonia_tipodebloqueo.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_telefresid.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>TELEF RESID</td><td>BLOQUEOS - Larga distancia (LDN + LDI)</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_telefonia_tipodebloqueo.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_telefresid.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>TELEF RESID</td><td>BLOQUEOS - Larga distancia Nacional (LDN)</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_telefonia_tipodebloqueo.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_telefresid.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>PREV. DE FRAUDES - GEST ADM.</td><td>INFORMA PAGO OP</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bloqueoslevel23.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_prevdefraudes.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>PREV. DE FRAUDES - GEST ADM.</td><td>RECLAMA BLOQUEO PREVENTIVO</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bloqueoslevel23.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_prevdefraudes.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>BACK OFFICE RETENCION</td><td>BAJA POR NUEVA VENTA EN DOMICILIO</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bonificaciones.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_reclamoasac.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>BACK OFFICE RETENCION</td><td>BAJA SIN PROCESAR EM CRM</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bonificaciones.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_reclamoasac.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>BACK OFFICE RETENCION</td><td>BONIFICACION NO CARGADA / NO IMPACTADA</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bonificaciones.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_reclamoasac.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>BACK OFFICE RETENCION</td><td>CONFIRMACION DE CLIENTES</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bonificaciones.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_reclamoasac.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>BACK OFFICE RETENCION</td><td>RECLAMO POR VISITIAS TECNICAS</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_bonificaciones.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_reclamoasac.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>RETIRO DE EQUIPOS</td><td>RETIRO POR BAJA PARCIAL DE SERVICIO Y/O INSUMO</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_recuperodeequipos.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_retirodeequipos.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>RETIRO DE EQUIPOS</td><td>CAMBIO DE DATOS DE RETIRO</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_recuperodeequipos.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_retirodeequipos.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>RETIRO DE EQUIPOS</td><td>DESISTE DE BAJA + RETIRO</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_recuperodeequipos.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_retirodeequipos.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>RETIRO DE EQUIPOS</td><td>NEGATIVA DE PAGO X INSUMOS</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_recuperodeequipos_veraz.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_retirodeequipos.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>RETIRO DE EQUIPOS</td><td>RECLAMA RETIRO</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_recuperodeequipos.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_retirodeequipos.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>RETIRO DE EQUIPOS</td><td>REPROGRAMAR VISITA</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_recuperodeequipos.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_retirodeequipos.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>RETIRO DE EQUIPOS</td><td>YA ENTREGO EQUIPOS(SIN COMPROBANTE)</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_recuperodeequipos_veraz.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_retirodeequipos.html')">+Plantilla</a></td></tr>
+<tr><td>RA</td><td>RETIRO DE EQUIPOS</td><td>YA ENTREGO EQUIPOS(CON COMPROBANTE)</td><td></td><td><a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_recuperodeequipos_veraz.html')">+Info</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="javascript:vs('http://call.telecentro.net.ar/administracion/adm_plantilla_raotro_retirodeequipos.html')">+Plantilla</a></td></tr>
+
+
+
+
+
+ 
+ 
+ 
+</tbody></table>
+    </table>
+    <!-- TABLA FINALIZA -->
+    
+    
+ 
+</div>
+</body>
